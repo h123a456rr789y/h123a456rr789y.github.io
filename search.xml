@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[tmux]]></title>
+    <url>%2F2020%2F03%2F29%2Ftmux%2F</url>
+    <content type="text"><![CDATA[tmuxWhat’s tmux A terminal multiplexer Allow open multiple tabs (multiple terminals)Why we need tmux Keep your working session alive tmux will not be terminated when connection is lostAdvantage of tmux: Multiple sessions, windows, panes sessions -browser tmux command will open a new session window -tab One session can have multiple windows pane -spit window A window can be split into multiple panesSession Create a new session (open a new browser) $ tmux Outside of tmux session Detach current session $ tmux detach Inside of tmux session Attach to previous session $ tmux attach Attach only if previous sessions exist List opened sessions $ tmux list-sessions Attach to previous session by id $ tmux attach -t session-id tmux - bindkey and command Defualt: Ctrl + b Command: The common command For Pane &lt;Ctrl+b&gt; + &quot;：進行水平分割 &lt;Ctrl+b&gt; + %：進行垂直分割 &lt;Ctrl+b&gt; + &lt;方向鍵&gt;：移動到其他 pane &lt;Ctrl+b&gt; + x：關閉目前的 pane For Session 1.&lt;Ctrl+b&gt; + d：把 session 放到背景(detach) 2.$ tmux at：attach 到背景的 session 3.$ tmux attach -t &lt;number&gt;: 開到指定的session 4.$tmux kill-session [ &lt;number&gt; ]:刪除指定的session 5.$tmux ls:展示所有的sessions Costimize you tmux create a config file ~/.tmux.conf Look up on Internet for more details tmux v.s. screen]]></content>
+      <tags>
+        <tag>SA Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Shell-Programming]]></title>
+    <url>%2F2020%2F03%2F29%2FShell-Programming%2F</url>
+    <content type="text"><![CDATA[#Shell Programming Bourne Shell Change to Bourne Shell (sh) % echo $SHELL % sh -&gt; $ Executable script Shebang #!/bin/sh #!/bin/bash #!/usr/local/bin/bash #!/usr/bin/env bash #!/usr/bin/env python Execution $ sh test.sh $ chmod a+x test.sh $ ./test.sh Shell variables Assignment Access Quotation marks Single quotes(‘xxx’): 把裡面的東西當字串直接印 Double quotes(“xxx”): 把裡面的東西當成special的 變數或其他東西印出 Back quotes(xxx): The stdout of the command Shell variable operator “Bad” : var is not set or the value is null “Good” : var is set and is not null Predefined shell variables Environment Variables Other useful variables: • $* : all arguments are formed into a long string • $@ : all arguments are formed into separated strings awk 鳥哥awk教學 awk讀file dir link 檔案類型有: d: directories 可用/^d/來讀取 -: files 可用/^-/來讀取 l: links 可用/^l/來讀取]]></content>
+      <tags>
+        <tag>SA Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Shells]]></title>
     <url>%2F2020%2F03%2F29%2FShells%2F</url>
     <content type="text"><![CDATA[Shells Interface to communicate with kernel Unix Shells 常見Unix 指令: UNIX 常見指令教學 Shell Environment Variables Variables and Strings Quotes Shell Special Characters ex: Built-in Shell Commands Input/Output Redirection File and Directory Related Commands Select and File Processing Related Commands Example usage: Find the occurrence of certain pattern in filegrep -l harry * Print the line number when using grepgrep -n harry /etc/passwd print the processes owned by harryps auxww | grep ^harry List harry’s id, uid, home, shell in /etc/passwdgrep harry /etc/passwd | cut -f1,3,6,7 -d: Cut out file permission and file name from ls outputls -l | grep -v ^total | cut -c1-11 -c47- -c1-12: 1 st ~12 th characters (start from 1, instead of 0) -c47-:characters after 47 th character (include 47 th) Use awk to generate the same behavior of cutawk -F: &#39;{print $1 &quot; &quot; $6}&#39; /etc/passwd Sortls -al | sort -k 5,5 -r tr -Translate characters Change all alphabet to uppercasetr &quot;A-Z&quot; &quot;a-z&quot; &lt; file1 &gt; file2 Change all character to another charatergrep lctseng /etc/passwd | tr &quot;:&quot; &quot;\n“ Delete tab in file1tr -d &quot;\t&quot; &lt; file1 Delete multiple space in file1tr -s &quot; &quot; &quot; &quot; &lt; file1 xargs Command want to ping all hosts in file Command History in (t)csh]]></content>
