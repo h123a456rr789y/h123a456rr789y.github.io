@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Intern,APM," />
+  <meta name="keywords" content="Deutsche Artikel," />
 
 
 
@@ -79,23 +79,22 @@
 
 
 
-<meta name="description" content="Recompile to Fit The Hardware on Particular PC">
-<meta name="keywords" content="Intern,APM">
+<meta name="description" content="Ein berühmter Informatiker Taiwans">
+<meta name="keywords" content="Deutsche Artikel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Recompile Kernel on Linux">
-<meta property="og:url" content="https://h123a456rr789y.github.io/2019/08/31/Recompile-Kernel-on-Linux/index.html">
+<meta property="og:title" content="Kai Fu Lee">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2020/03/29/Kai-Fu-Lee/index.html">
 <meta property="og:site_name" content="Harry&#39;s Stories">
-<meta property="og:description" content="Recompile to Fit The Hardware on Particular PC">
+<meta property="og:description" content="Ein berühmter Informatiker Taiwans">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/RKficKz.png">
-<meta property="og:image" content="https://i.imgur.com/jkzbdg2.png">
-<meta property="og:image" content="https://i.imgur.com/FpIsYaH.png">
-<meta property="og:image" content="https://i.imgur.com/z5isvL4.png">
-<meta property="og:updated_time" content="2019-08-31T08:34:55.620Z">
+<meta property="og:image" content="https://i.imgur.com/lzDFXCv.png =400x300">
+<meta property="og:image" content="https://i.imgur.com/da0aVy7.jpg">
+<meta property="og:image" content="https://i.imgur.com/FOoTbfZ.png =1200x450">
+<meta property="og:updated_time" content="2020-03-29T21:24:19.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Recompile Kernel on Linux">
-<meta name="twitter:description" content="Recompile to Fit The Hardware on Particular PC">
-<meta name="twitter:image" content="https://i.imgur.com/RKficKz.png">
+<meta name="twitter:title" content="Kai Fu Lee">
+<meta name="twitter:description" content="Ein berühmter Informatiker Taiwans">
+<meta name="twitter:image" content="https://i.imgur.com/lzDFXCv.png =400x300">
 
 
 
@@ -127,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://h123a456rr789y.github.io/2019/08/31/Recompile-Kernel-on-Linux/"/>
+  <link rel="canonical" href="https://h123a456rr789y.github.io/2020/03/29/Kai-Fu-Lee/"/>
 
 
 
 
 
-  <title>Recompile Kernel on Linux | Harry's Stories</title>
+  <title>Kai Fu Lee | Harry's Stories</title>
   
 
 
@@ -320,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2019/08/31/Recompile-Kernel-on-Linux/">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/03/29/Kai-Fu-Lee/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harry Hong">
@@ -337,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Recompile Kernel on Linux</h1>
+          <h1 class="post-title" itemprop="name headline">Kai Fu Lee</h1>
         
 
         <div class="post-meta">
@@ -349,8 +348,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-31T16:24:42+02:00">
-                2019-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-29T23:15:53+02:00">
+                2020-03-29
               </time>
             
 
@@ -368,9 +367,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/31/Recompile-Kernel-on-Linux/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/29/Kai-Fu-Lee/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/08/31/Recompile-Kernel-on-Linux/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/29/Kai-Fu-Lee/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +384,7 @@
 
           
               <div class="post-description">
-                  Recompile to Fit The Hardware on Particular PC
+                  Ein berühmter Informatiker Taiwans
               </div>
           
 
@@ -402,56 +401,12 @@
       
 
       
-        <h1 id="Recompile-Kernel-on-Linux"><a href="#Recompile-Kernel-on-Linux" class="headerlink" title="Recompile Kernel on Linux"></a>Recompile Kernel on Linux</h1><h2 id="Prerequisite-of-Building-the-Kernel"><a href="#Prerequisite-of-Building-the-Kernel" class="headerlink" title="Prerequisite of Building the Kernel"></a>Prerequisite of Building the Kernel</h2><ul>
-<li>Check gcc is installed </li>
-<li>Tools needed:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libncurses5-dev xz-utils libssl-dev kernel-package wget</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Step1-0-到-Kernel-org-下載需要的版本"><a href="#Step1-0-到-Kernel-org-下載需要的版本" class="headerlink" title="Step1.0 :到 Kernel.org 下載需要的版本"></a>Step1.0 :到 Kernel.org 下載需要的版本</h2><ul>
-<li>用 git clone 或 wget 下載原始碼 並丟到 /usr/src 的資料夾下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/torvalds/linux/archive/v4.x/linux-4.15.tar.gz </span><br><span class="line">tar zxvf linux-4.15.tar.gz</span><br><span class="line">cd linux-4.15/</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Step1-1-Ubuntu-Launchpad-the-Sub-version-of-Kernel-Source-Code"><a href="#Step1-1-Ubuntu-Launchpad-the-Sub-version-of-Kernel-Source-Code" class="headerlink" title="Step1.1 :Ubuntu Launchpad the Sub-version of Kernel Source Code"></a>Step1.1 :Ubuntu Launchpad the Sub-version of Kernel Source Code</h2><pre><code>Link:https://launchpad.net/ubuntu/+source/linux/4.15.0-50.54
-</code></pre><ul>
-<li>There are 3 files to be downloaded <code>linux_4.15.0.orig.tar.gz &amp; linux_4.15.0-50.54.diff.gz &amp; linux_4.15.0-50.54.dsc</code> <ul>
-<li>.orig.tar.gz -&gt; The original kernel</li>
-<li>.diff.gz -&gt; The diffence (patch) between the updated code and the original code.</li>
-<li>.dsc -&gt; A short textfile descripts of the .orig and .diff and connect the files above<br><img src="https://i.imgur.com/RKficKz.png" alt=""></li>
-</ul>
-</li>
-<li>Use the dpkg to extract the files<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg-source -x package.dsc</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Step2-設定-config-來調整硬體需求"><a href="#Step2-設定-config-來調整硬體需求" class="headerlink" title="Step2: 設定 config 來調整硬體需求"></a>Step2: 設定 config 來調整硬體需求</h2><ul>
-<li>複製原有的 config 檔案，重新存成一份 .config </li>
-<li>可用xconfig,or menuconfig 來設定config檔</li>
-<li>Change the name of compile kernel version name:<br><code>vim Makefile</code><br>to change the version name as the photo below before compiling<br><img src="https://i.imgur.com/jkzbdg2.png" alt=""></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp /boot/config-4.4.0-21-generic ./.config</span><br><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
-<h2 id="Step3-Compile-the-kernel"><a href="#Step3-Compile-the-kernel" class="headerlink" title="Step3: Compile the kernel"></a>Step3: Compile the kernel</h2><ul>
-<li>-j 4 代表使用4核心進行編譯，可以加速 compile 的慢長過程</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo make -j 4 clean</span><br><span class="line">sudo make -j 4</span><br><span class="line">sudo make modules -j 4</span><br><span class="line">sudo make modules_install</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<h2 id="Step4-更新initramfs-image"><a href="#Step4-更新initramfs-image" class="headerlink" title="Step4: 更新initramfs image"></a>Step4: 更新initramfs image</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-initramfs -u -k all</span><br></pre></td></tr></table></figure>
-<h2 id="Step5-更新grub-list"><a href="#Step5-更新grub-list" class="headerlink" title="Step5: 更新grub-list"></a>Step5: 更新grub-list</h2><ul>
-<li>重開機後按 Esc 開機選單就可看到可選的新裝好的kernel開機<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="開機後用指定版本Kernel開機"><a href="#開機後用指定版本Kernel開機" class="headerlink" title="開機後用指定版本Kernel開機"></a>開機後用指定版本Kernel開機</h1><ul>
-<li>Edit string in /etc/default/grub, then save<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">shell &gt; sudo vim /etc/default/grub</span><br><span class="line">/*</span><br><span class="line">edit from</span><br><span class="line">GRUB_DEFAULT=0</span><br><span class="line">save to</span><br><span class="line">GRUB_DEFAULT=saved</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/FpIsYaH.png" alt=""></p>
-<ul>
-<li>查看目前開機的kernel modules<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell &gt; awk -F\&apos; &apos;$1==&quot;menuentry &quot; || $1==&quot;submenu &quot; &#123;print i++ &quot; : &quot; $2&#125;; /\tmenuentry / &#123;print &quot;\t&quot; i-1&quot;&gt;&quot;j++ &quot; : &quot; $2&#125;;&apos; /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/z5isvL4.png" alt=""></p>
-<ul>
-<li>選擇指定的kernel 版本並下以下指令, 以下是以想要使用”4.4.0-87”(‘1&gt;4’)為例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shell &gt; sudo grub-set-default &apos;1&gt;4&apos;</span><br><span class="line">shell &gt; sudo update-grub</span><br><span class="line">shell &gt; sudo reboot</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="Ubuntu-package-of-Kernel-compiled"><a href="#Ubuntu-package-of-Kernel-compiled" class="headerlink" title="Ubuntu package of Kernel (compiled)"></a>Ubuntu package of Kernel (compiled)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get linux-header-4.15.0-55-generic</span><br></pre></td></tr></table></figure>
+        <p>Kai Fu Lee, ein taiwanischer Informatiker, wurde am 3. Dezember 1961 in Taipeh geboren. Er ist nicht nur ein informatik Wissenschaftler, sodern auch ein erfolgreicher Unternehmer und ein Autor. Lee hat seinem Doktorarbeit über das erste Spracherkenungssystem in der Carnegie Mellon Universität absoviert. Danach hat Lee als Manager für Apple, Microsoft und Google gearbeitet. </p>
+<p><img src="https://i.imgur.com/lzDFXCv.png =400x300" alt=""></p>
+<p>Von 1988 bis 2000, war er an der Führungsposition von Microsoft Research Asia. Ab 2005 war er zum Präsodenten von Google China befördert worden. Woxuewang, eine Lernwebseite, wurde von ihm gegründet, um die jungen Chinesen in Bildung und Karrier zu unterstützen. Außerdem schreibt er Artikel und Bücher über künstliche Intelligenz und über seiner Lebensanschauung.</p>
+<p><img src="https://i.imgur.com/da0aVy7.jpg" alt=""></p>
+<p>Sein „Zehn Briefe an den chinesischen Student“ haben sich im Internet verbreitet. Im Jahr 2013, wurde er mit Kerbs diagnostiziert und hat seine Arbeit für 17 Monate aufgehört. 2015 wurde er wieder gesund und ist weiterhin in seiner Arbeit engagiert. Als Inbegriff des Forschers und Pionier der Künstlichen Intelligenz, hat er sehr viel Mühe in die neue Generation gesteckt, damit die Menschen und die Künstliche Intelligenz zusammen in der Zukunft gut weiter entwickt werden.</p>
+<p><img src="https://i.imgur.com/FOoTbfZ.png =1200x450" alt=""></p>
 
       
     </div>
@@ -469,9 +424,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Intern/" rel="tag"># Intern</a>
-          
-            <a href="/tags/APM/" rel="tag"># APM</a>
+            <a href="/tags/Deutsche-Artikel/" rel="tag"># Deutsche Artikel</a>
           
         </div>
       
@@ -484,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/31/APM-Deployment/" rel="next" title="APM-Deployment">
-                <i class="fa fa-chevron-left"></i> APM-Deployment
+              <a href="/2020/03/29/Die-chinesisische-Sprache/" rel="next" title="Die chinesisische Sprache">
+                <i class="fa fa-chevron-left"></i> Die chinesisische Sprache
               </a>
             
           </div>
@@ -493,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/31/Web-Server-API-Server/" rel="prev" title="Web Server & API Server">
-                Web Server & API Server <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,17 +507,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -651,22 +591,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Recompile-Kernel-on-Linux"><span class="nav-number">1.</span> <span class="nav-text">Recompile Kernel on Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisite-of-Building-the-Kernel"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite of Building the Kernel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-0-到-Kernel-org-下載需要的版本"><span class="nav-number">1.2.</span> <span class="nav-text">Step1.0 :到 Kernel.org 下載需要的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-1-Ubuntu-Launchpad-the-Sub-version-of-Kernel-Source-Code"><span class="nav-number">1.3.</span> <span class="nav-text">Step1.1 :Ubuntu Launchpad the Sub-version of Kernel Source Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-設定-config-來調整硬體需求"><span class="nav-number">1.4.</span> <span class="nav-text">Step2: 設定 config 來調整硬體需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-Compile-the-kernel"><span class="nav-number">1.5.</span> <span class="nav-text">Step3: Compile the kernel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4-更新initramfs-image"><span class="nav-number">1.6.</span> <span class="nav-text">Step4: 更新initramfs image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step5-更新grub-list"><span class="nav-number">1.7.</span> <span class="nav-text">Step5: 更新grub-list</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#開機後用指定版本Kernel開機"><span class="nav-number">2.</span> <span class="nav-text">開機後用指定版本Kernel開機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu-package-of-Kernel-compiled"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu package of Kernel (compiled)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -838,9 +762,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://h123a456rr789y.github.io/2019/08/31/Recompile-Kernel-on-Linux/';
-          this.page.identifier = '2019/08/31/Recompile-Kernel-on-Linux/';
-          this.page.title = 'Recompile Kernel on Linux';
+          this.page.url = 'https://h123a456rr789y.github.io/2020/03/29/Kai-Fu-Lee/';
+          this.page.identifier = '2020/03/29/Kai-Fu-Lee/';
+          this.page.title = 'Kai Fu Lee';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://harrys-story.disqus.com/embed.js';
