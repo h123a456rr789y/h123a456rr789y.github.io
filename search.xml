@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Die-chinesisische-Sprache]]></title>
+    <title><![CDATA[Die chinesisische Sprache]]></title>
     <url>%2F2020%2F03%2F29%2FDie-chinesisische-Sprache%2F</url>
     <content type="text"><![CDATA[Die chinesischen Sprachen sind Tonsprachen und entstammen aus der sinotibetischen Sprachfamilie. Heuzutage wurden die chinesischen Sprache von ca.1,5 Millarden Menschen gesprochen, von denen die meisten in China und Taiwan leben. Außerdem ist Mandarin die Hauptsprache mit der größten Anzahl (ca.8,89 Millionnen) an Sprechern von allen chinesischen Sprachen und ist auch die Sprache mit den weltweit meisten Muttersprachlern. Es gibt hauptsächlich drei chinesische Dialekte, darunter der Mandarin-Dialekt bzw. Hochchinesisch aus Perking, nordöstliche Dialekt und südliche Dialekt. Jedoch können die Sprecher von verschiedenen Dialekten sich untereinander nicht verständigen, aber die Wörter werden in den gleichen chinesischen Schriftzeichen geschrieben. Es gibt insgesamt über 100,000 Schriftzeichen, von denen der überwiegende Teil jedoch heute selten verwenden wird. Für den alltäglichen Bedarf ist die Kenntnis von 3000 bis 5000 Schriftzeichen ausreichend, um die Zeitungen und die Bücher zu nachvollziehen. In China wird Manderin mit Pīnyīn und vereinfachen Chinesisch verwendet und in Taiwan wird es mit Zhùyīn und traditionellen Chinesisch verwenden. Das älteste Schriftzeichen ist vermutlich vor etwa 3000 Jahren erfunden worden und wurde auf Orakelknochen gezeichnet. Zusätzlich bestehen die Schriftzeichen hauptsächlich aus sechs Kategorien, worunter Piktogramme, Symbole, Ideogramme, Phonogramme, Entlehnungen und Synonyme. Die überwiegende Mehrheit sind Phonogramme mit dem Anteil von 90 Prozent.]]></content>
       <tags>
@@ -9,7 +9,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Das-chinesische-Neujahrsfest]]></title>
+    <title><![CDATA[Das chinesische Neujahrsfest]]></title>
     <url>%2F2020%2F03%2F29%2FDas-chinesische-Neujahrsfest%2F</url>
     <content type="text"><![CDATA[Das chinesische Neujahrsfest ist das wichtigeste Fest in Taiwan. Es findest jeweils an unterschiedlichen Tagen statt, denn das chinesische Neujahr hängt von dem Mondkalender ab. Jedes Jahr bekommt man Ferien von einem Tag vor Silvester bis zum 5.1. von des Monkalenders. Das chinesiches Neujahr ist ein Clan- und Familiefest, weshalb egal wo die Familiemitglieder wohnen, treffen alle durch das Fest zusammen. Es gibt’s viele Traditionen, die man im Neujahr machen. Am Silvester kommt die Familie zu einem reichhaltingen Essen, traditionell mit Fisch, der wird jedoch nicht vollständig gegessen. Weil das Wort ein Homophon für „Überfluss“ ist, was auch „Wohlstand“ für das kommende Jahr bedeutet. Nach dem Essen, wird die Familie zusammen spielen, Fernsehen schauen oder sich mit den Leuten unterhalten. Anschließend, werden die Kinder den roten Umschlag mit Geld von den Verwandten bekommen. Außerdem, viele Leute spielen gerne Mah-Juongg um wenig Geld und auch Lotto, um Glück und Spaß in das neue Jahr mitzubringen. Im Neujahr verreist man viel mit der Familie und den Freunden zusammen, sodass die Innenstädte immer voll mit Menschen sind. Das chinesische Neujahrsfest ist ein großartiges Fest, dass welches die Zusammenkunft der Familie und immer eng und stark verbindet.]]></content>
       <tags>
@@ -17,7 +17,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Controling-Processes]]></title>
+    <title><![CDATA[Controling Processes]]></title>
     <url>%2F2020%2F03%2F29%2FControling-Processes%2F</url>
     <content type="text"><![CDATA[Controling Process Program to Process program exacute -&gt; process Components of Process Address space in mem A set of DS within the kernel Attributes of the Process PID, PPID UID, EUID GID, EGID Niceness Process Lifecycle fork: same PID exac: exacute another programm with diff PID exit: child use _exit to tell kernel that it is ready to end and child’s parent will know wait: parent use wait to wait for child’s death Attributes of the process – UID、GID、EUID and EGID The effective uid and gid can be used to enable or restrict the additional permissions Effective uid will be set to: Real uid if setuid bit is off The file owner’s uid if setuid bit is on Signal telling a process something has happened Signals can be sent communication between processes kill, interrupt, or suspend process 、 bg, fg administrator to achieve various results kill pid killall process violate the rules divide by zero Illegal memory access Signal – Actions when receiving signal Depend on whether there is a designated handler routine for that signal “Catching” the signal Two ways to prevent signals from arriving Ignored Blocked FreeBSD signals Signal – Send signals: kill %kill [-signal] pid ex: kill -9 pid kill -l killall tcsh killall -u harry Niceness (Nice Value) form -20 ~ +20 (-20 high to +20 low priority) related to CPU time quantum Inherent Property child niceless cant be higher than parent Root has complete freedom in setting nice value other users can only set for lower priority Niceness – nice and renice nice format OS nice : $ /usr/bin/nice [range] utility [argument] csh nice(built-in) : $ nice [range] utility [argument] ex:$ nice +10 ps -l renice format cpuset command To see how many CPUs on your machine cpuset -g Run commands with less CPUs cpuset -l cpus cmd Process States ps command ps ps aux ps auxww a:all w:wide top command top -q run top and renice it to -20 top -u don’t map uid to username top -U show process owned by user htop (advanced top) Runaway process Processes that use up excessive system resource or just go berserk kill -TERM for unknown process renice it to a higher nice value for reasonable process]]></content>
       <tags>
@@ -33,7 +33,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Shell-Programming]]></title>
+    <title><![CDATA[Shell Programming]]></title>
     <url>%2F2020%2F03%2F29%2FShell-Programming%2F</url>
     <content type="text"><![CDATA[#Shell Programming Bourne Shell Change to Bourne Shell (sh) % echo $SHELL % sh -&gt; $ Executable script Shebang #!/bin/sh #!/bin/bash #!/usr/local/bin/bash #!/usr/bin/env bash #!/usr/bin/env python Execution $ sh test.sh $ chmod a+x test.sh $ ./test.sh Shell variables Assignment Access Quotation marks Single quotes(‘xxx’): 把裡面的東西當字串直接印 Double quotes(“xxx”): 把裡面的東西當成special的 變數或其他東西印出 Back quotes(xxx): The stdout of the command Shell variable operator “Bad” : var is not set or the value is null “Good” : var is set and is not null Predefined shell variables Environment Variables Other useful variables: • $* : all arguments are formed into a long string • $@ : all arguments are formed into separated strings awk 鳥哥awk教學 awk讀file dir link 檔案類型有: d: directories 可用/^d/來讀取 -: files 可用/^-/來讀取 l: links 可用/^l/來讀取]]></content>
       <tags>
