@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="SA Note," />
+  <meta name="keywords" content="Deutsche Artikel," />
 
 
 
@@ -79,24 +79,21 @@
 
 
 
-<meta name="description" content="Introduction to terminal tools- tmux">
-<meta name="keywords" content="SA Note">
+<meta name="description" content="Die Zusammenfassung von dem Film ‚Isi und Ossi‘">
+<meta name="keywords" content="Deutsche Artikel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tmux">
-<meta property="og:url" content="https://h123a456rr789y.github.io/2020/03/29/tmux/index.html">
+<meta property="og:title" content="Isi und Ossi">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2020/04/05/isi-und-ossi/index.html">
 <meta property="og:site_name" content="Harry&#39;s Stories">
-<meta property="og:description" content="Introduction to terminal tools- tmux">
+<meta property="og:description" content="Die Zusammenfassung von dem Film ‚Isi und Ossi‘">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/6FKhB54.png">
-<meta property="og:image" content="https://i.imgur.com/JbdV1kb.png">
-<meta property="og:image" content="https://i.imgur.com/3eEGSqP.png">
-<meta property="og:image" content="https://i.imgur.com/jX1nFyp.png">
-<meta property="og:image" content="https://i.imgur.com/SrF0lq6.png">
-<meta property="og:updated_time" content="2020-03-29T20:19:01.983Z">
+<meta property="og:image" content="https://i.imgur.com/TV9vFuK.jpg">
+<meta property="og:image" content="https://i.imgur.com/KOMNYtw.jpg">
+<meta property="og:updated_time" content="2020-04-05T23:42:42.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tmux">
-<meta name="twitter:description" content="Introduction to terminal tools- tmux">
-<meta name="twitter:image" content="https://i.imgur.com/6FKhB54.png">
+<meta name="twitter:title" content="Isi und Ossi">
+<meta name="twitter:description" content="Die Zusammenfassung von dem Film ‚Isi und Ossi‘">
+<meta name="twitter:image" content="https://i.imgur.com/TV9vFuK.jpg">
 
 
 
@@ -128,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://h123a456rr789y.github.io/2020/03/29/tmux/"/>
+  <link rel="canonical" href="https://h123a456rr789y.github.io/2020/04/05/isi-und-ossi/"/>
 
 
 
 
 
-  <title>tmux | Harry's Stories</title>
+  <title>Isi und Ossi | Harry's Stories</title>
   
 
 
@@ -321,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/03/29/tmux/">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/04/05/isi-und-ossi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harry Hong">
@@ -338,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tmux</h1>
+          <h1 class="post-title" itemprop="name headline">Isi und Ossi</h1>
         
 
         <div class="post-meta">
@@ -350,8 +347,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-29T22:17:54+02:00">
-                2020-03-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-05T22:40:52+02:00">
+                2020-04-05
               </time>
             
 
@@ -369,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/29/tmux/#comments" itemprop="discussionUrl">
+                <a href="/2020/04/05/isi-und-ossi/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/29/tmux/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/04/05/isi-und-ossi/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +383,7 @@
 
           
               <div class="post-description">
-                  Introduction to terminal tools- tmux
+                  Die Zusammenfassung von dem Film ‚Isi und Ossi‘
               </div>
           
 
@@ -403,70 +400,11 @@
       
 
       
-        <h1 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h1><h3 id="What’s-tmux"><a href="#What’s-tmux" class="headerlink" title="What’s tmux"></a>What’s tmux</h3><ul>
-<li>A terminal multiplexer</li>
-<li>Allow open multiple tabs (multiple terminals)<br><img src="https://i.imgur.com/6FKhB54.png" alt=""><h3 id="Why-we-need-tmux"><a href="#Why-we-need-tmux" class="headerlink" title="Why we need tmux"></a>Why we need tmux</h3></li>
-<li>Keep your working session alive</li>
-<li>tmux will not be terminated when connection is lost<h3 id="Advantage-of-tmux"><a href="#Advantage-of-tmux" class="headerlink" title="Advantage of tmux:"></a>Advantage of tmux:</h3></li>
-<li>Multiple sessions, windows, panes<ul>
-<li>sessions -browser<ul>
-<li><code>tmux</code> command will open a new session</li>
-</ul>
-</li>
-<li>window -tab<ul>
-<li>One session can have multiple windows</li>
-</ul>
-</li>
-<li>pane -spit window<ul>
-<li>A window can be split into multiple panes<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Create a new  session (open a new browser)<ul>
-<li><code>$ tmux</code></li>
-<li>Outside of tmux session</li>
-</ul>
-</li>
-<li>Detach current session<ul>
-<li><code>$ tmux detach</code></li>
-<li>Inside of tmux session</li>
-</ul>
-</li>
-<li>Attach to previous session<ul>
-<li><code>$ tmux attach</code></li>
-<li>Attach only if previous sessions exist</li>
-</ul>
-</li>
-<li>List opened sessions<ul>
-<li><code>$ tmux list-sessions</code></li>
-</ul>
-</li>
-<li>Attach to previous session by id<ul>
-<li><code>$ tmux attach -t session-id</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="tmux-bindkey-and-command"><a href="#tmux-bindkey-and-command" class="headerlink" title="tmux - bindkey and command"></a>tmux - bindkey and command</h3><ul>
-<li>Defualt: Ctrl + b</li>
-<li><p>Command:<br><img src="https://i.imgur.com/JbdV1kb.png" alt=""><br><img src="https://i.imgur.com/3eEGSqP.png" alt=""></p>
-</li>
-<li><p>The common command </p>
-</li>
-<li>For Pane<ol>
-<li><code>&lt;Ctrl+b&gt; + &quot;</code>：進行水平分割</li>
-<li><code>&lt;Ctrl+b&gt; + %</code>：進行垂直分割</li>
-<li><code>&lt;Ctrl+b&gt; + &lt;方向鍵&gt;</code>：移動到其他 pane</li>
-<li><code>&lt;Ctrl+b&gt; + x</code>：關閉目前的 pane<br><img src="https://i.imgur.com/jX1nFyp.png" alt=""></li>
-</ol>
-</li>
-<li>For Session<br>  1.<code>&lt;Ctrl+b&gt; + d</code>：把 session 放到背景(detach)<br>  2.<code>$ tmux at</code>：attach 到背景的 session<br>  3.<code>$ tmux attach -t &lt;number&gt;</code>: 開到指定的session<br>  4.<code>$tmux kill-session [ &lt;number&gt; ]</code>:刪除指定的session<br>  5.<code>$tmux ls</code>:展示所有的sessions</li>
-</ul>
-<h3 id="Costimize-you-tmux"><a href="#Costimize-you-tmux" class="headerlink" title="Costimize you tmux"></a>Costimize you tmux</h3><ul>
-<li>create a config file <code>~/.tmux.conf</code></li>
-<li>Look up on Internet for more details</li>
-</ul>
-<h3 id="tmux-v-s-screen"><a href="#tmux-v-s-screen" class="headerlink" title="tmux v.s. screen"></a>tmux v.s. screen</h3><p><img src="https://i.imgur.com/SrF0lq6.png" alt=""></p>
+        <p>‚Isi und Ossi‘ ist eine deutsche Liebeskomödie aus dem Jahr 2020. Es handelt sich um die erste deutsche Netflix-Film-Eigenproduktion. Die Hauptrollen verköpern Lisa Vicari und Dennis Mojen und der Film wurde von Oliver Kienle produziet. </p>
+<p><img src="https://i.imgur.com/TV9vFuK.jpg" alt=""></p>
+<p>Isi kommt aus einer sehr reichen Familie in Heidelberg, die sich gar nicht für die Zukunft sorgen muss. Jedoch möchte sie eine Kochausbildung in New York machen und eine Köchin werden, sodass ihre Eltern sich in den Weg stellen und sie ein BWL Studium erwarten. Im Gegensazt kommt Ossi aus einer pleiten Familie in Mannheim. Seine Mutter besiztet eine Tankstelle und hat viele Schulden. Sein Großvater ist ein verwahrloster Krimineller, der neulich aus einem Gefängis entlassen wurde. Aufgrund der Geldprobleme konnte er seinen Traum als professioneller Boxer nicht ermöglichen. Als die beiden sich zufällig begegnen, verfolgt Isi den Plan, dass Ossi sich vor ihren Eltern als asozialer Freund benehmen soll, um diese zu erpressen. Dafür finanziert Isi ihm seinen Kampf, der Eintritt in die Profiliga, und rettet die Tankstelle seiner Mutter vor dem Bankrott. Was als Spiel beginnt, wird jedoch plöztlich ernst, sie haben sich darüber hinaus tatsächlich ineinander verliebt und sind durcheinander. Was wichtiger ist: Liebe oder Karriere? Letztendlich, hat Isi nach einigen Verwicklungen auf die Kochausbildung verzichtet und stattdessen hat sie einen Burgerladen aufgekauft. Ossi hat schließlich den Kampf gewonnen und die Geschichte zwischen dem süßen Paar entfaltet sich auf eine ungewisse Zukunft. </p>
+<p><img src="https://i.imgur.com/KOMNYtw.jpg" alt=""></p>
+<p>Die Szene, in welcher Isi auffortdert sie „Kannst du mich bitte richtig asozial küssen“, ist total süß. Obwohl die Karriere, die Familiehintergründe und die Personalität so ungleich sind, die beiden haben sich einfach so verliebt. Es geht darum, dass die Hauptsache der Liebe immer das authentische Gefühl ist, wenn du extrem reich bist oder dein Partner bzw. Partnerin extrem reicht ist.</p>
 
       
     </div>
@@ -484,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SA-Note/" rel="tag"># SA Note</a>
+            <a href="/tags/Deutsche-Artikel/" rel="tag"># Deutsche Artikel</a>
           
         </div>
       
@@ -497,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/29/Shell-Programming/" rel="next" title="Shell Programming">
-                <i class="fa fa-chevron-left"></i> Shell Programming
+              <a href="/2020/03/30/學習德文/" rel="next" title="學習一個第二外語 --- 德文">
+                <i class="fa fa-chevron-left"></i> 學習一個第二外語 --- 德文
               </a>
             
           </div>
@@ -506,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/29/Controling-Processes/" rel="prev" title="Controling Processes">
-                Controling Processes <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,17 +505,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -664,22 +589,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tmux"><span class="nav-number">1.</span> <span class="nav-text">tmux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What’s-tmux"><span class="nav-number">1.0.1.</span> <span class="nav-text">What’s tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-we-need-tmux"><span class="nav-number">1.0.2.</span> <span class="nav-text">Why we need tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantage-of-tmux"><span class="nav-number">1.0.3.</span> <span class="nav-text">Advantage of tmux:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">1.0.4.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux-bindkey-and-command"><span class="nav-number">1.0.5.</span> <span class="nav-text">tmux - bindkey and command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Costimize-you-tmux"><span class="nav-number">1.0.6.</span> <span class="nav-text">Costimize you tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux-v-s-screen"><span class="nav-number">1.0.7.</span> <span class="nav-text">tmux v.s. screen</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -851,9 +760,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://h123a456rr789y.github.io/2020/03/29/tmux/';
-          this.page.identifier = '2020/03/29/tmux/';
-          this.page.title = 'tmux';
+          this.page.url = 'https://h123a456rr789y.github.io/2020/04/05/isi-und-ossi/';
+          this.page.identifier = '2020/04/05/isi-und-ossi/';
+          this.page.title = 'Isi und Ossi';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://harrys-story.disqus.com/embed.js';
