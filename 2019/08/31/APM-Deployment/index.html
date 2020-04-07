@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/profile_256x256.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Intern,APM," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="APM Deployment Details">
+<meta name="keywords" content="Intern,APM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APM-Deployment">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2019/08/31/APM-Deployment/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="APM Deployment Details">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/9NWG5gj.jpg">
+<meta property="og:image" content="https://i.imgur.com/df8snkD.jpg">
+<meta property="og:image" content="https://i.imgur.com/4B0dki4.png">
+<meta property="og:image" content="https://i.imgur.com/2Rr40SZ.png">
+<meta property="og:image" content="https://i.imgur.com/UbT9x83.png">
+<meta property="og:image" content="https://i.imgur.com/qgdRnqD.png">
+<meta property="og:image" content="https://i.imgur.com/bVhdIsw.png">
+<meta property="og:image" content="https://i.imgur.com/bQC4wcP.png">
+<meta property="og:image" content="https://i.imgur.com/6QMuKDH.png">
+<meta property="og:updated_time" content="2019-08-31T08:23:52.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APM-Deployment">
+<meta name="twitter:description" content="APM Deployment Details">
+<meta name="twitter:image" content="https://i.imgur.com/9NWG5gj.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+  <link rel="canonical" href="https://h123a456rr789y.github.io/2019/08/31/APM-Deployment/"/>
+
+
+
+
+
+  <title>APM-Deployment | Harry's Stories</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harry's Stories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Adventurer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            photos
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2019/08/31/APM-Deployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">APM-Deployment</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-31T16:22:59+02:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/31/APM-Deployment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/08/31/APM-Deployment/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  APM Deployment Details
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: APM Deployment<br>tags: Intern, APM</p>
+<h2 id="description"><a href="#description" class="headerlink" title="description:"></a>description:</h2><h1 id="APM-Deployment"><a href="#APM-Deployment" class="headerlink" title="APM Deployment"></a>APM Deployment</h1><h2 id="APM-structure"><a href="#APM-structure" class="headerlink" title="APM structure"></a>APM structure</h2><h3 id="Haas-Machine"><a href="#Haas-Machine" class="headerlink" title="Haas Machine"></a>Haas Machine</h3><p><img src="https://i.imgur.com/9NWG5gj.jpg" alt=""></p>
+<h3 id="Machine-in-78-Lab"><a href="#Machine-in-78-Lab" class="headerlink" title="Machine in 78 Lab"></a>Machine in 78 Lab</h3><p><img src="https://i.imgur.com/df8snkD.jpg" alt=""></p>
+<h2 id="Operating-Environment-Template"><a href="#Operating-Environment-Template" class="headerlink" title="Operating Environment Template"></a>Operating Environment Template</h2><ul>
+<li>Host OS: Ubuntu Desktop 16.04 LTS</li>
+<li>Guest(VM) OS: Ubuntu Desktop 16.04 LTS(CN)(kernel 4.15.0-55) &amp; 14.04 LTS (Test VM)(kernel 4.4.0-87)</li>
+<li>All of Login Account (Account Type): test (Administrator)</li>
+<li>All of Login Password: test</li>
+<li>Additional Installed Packages: vim, openssh-server, desktop sharing, folder sharing</li>
+</ul>
+<h2 id="Install-and-Run-KVM"><a href="#Install-and-Run-KVM" class="headerlink" title="Install and Run KVM"></a>Install and Run KVM</h2><ul>
+<li>Install the packages of KVM, then reboot<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell &gt; sudo apt install qemu-kvm libvirt-bin bridge-utils virt-manager</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Passwordless-for-Root"><a href="#Passwordless-for-Root" class="headerlink" title="Passwordless for Root"></a>Passwordless for Root</h2><ul>
+<li>Edit the file /etc/sudoers<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/sudoers</span><br><span class="line"></span><br><span class="line">##Add the line in the this file </span><br><span class="line"></span><br><span class="line">username  ALL=(ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Setup-Passwordless-with-ssh"><a href="#Setup-Passwordless-with-ssh" class="headerlink" title="Setup Passwordless with ssh"></a>Setup Passwordless with ssh</h2><ul>
+<li><p>Set up passwordless connection between (CN&amp;SN),(SN &amp; TestVM) and (DN &amp; CN) bidirectionally</p>
+</li>
+<li><p>Set up: PermitRootLogin yes and ssh restart</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line">sudo service ssh restart</span><br><span class="line">sudo service ssh status</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/4B0dki4.png" alt=""></p>
+<ul>
+<li>Change Root password <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line">``` </span><br><span class="line">- ssh-keygen in root and ssh-copy-id to the target</span><br><span class="line">    - test &lt;-&gt; test</span><br><span class="line">    - test &lt;-&gt; root</span><br><span class="line">    - root &lt;-&gt; test</span><br><span class="line">    - root &lt;-&gt; root</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>ssh-keygen</p>
+<h1 id="Enter-to-the-end"><a href="#Enter-to-the-end" class="headerlink" title="Enter to the end"></a>Enter to the end</h1><p>ssh-copy-id root@target_ip</p>
+<h1 id="enter-root-password"><a href="#enter-root-password" class="headerlink" title="enter root-password"></a>enter root-password</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- Root 間有成功做到passwordless 則 user間就也有passwordless</span><br><span class="line"></span><br><span class="line">## Change to the Correct Kernel Version</span><br><span class="line">- Use follow commmand to check your OS &amp; kernel infomation</span><br></pre></td></tr></table></figure>
+<p>lsb_release -a</p>
+<p>uname -a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- Install 4.15.0-55 kernel image, headers &amp; modules-extra and update initramfs &amp; grub, then reboot</span><br></pre></td></tr></table></figure></p>
+<p>shell &gt; sudo apt install linux-image-4.15.0-55-generic<br>shell &gt; sudo apt install linux-headers-4.15.0-55-generic<br>shell &gt; sudo apt install linux-modules-extra-4.15.0-55-generic<br>shell &gt; sudo update-initramfs -u -k all<br>shell &gt; sudo update-grub<br>shell &gt; sudo reboot<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- Install 4.4.0-87 kernel image, image-extra &amp; headers and update initramfs &amp; grub, then reboot</span><br></pre></td></tr></table></figure></p>
+<p>shell &gt; sudo apt-get install linux-image-4.4.0-87-generic<br>shell &gt; sudo apt-get install linux-image-extra-4.4.0-87-generic<br>shell &gt; sudo apt-get install linux-headers-4.4.0-87-generic<br>shell &gt; sudo update-initramfs -u -k all<br>shell &gt; sudo update-grub<br>shell &gt; sudo reboot<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Edit string in /etc/default/grub, then save</span><br></pre></td></tr></table></figure></p>
+<p>/<em>edit from<br>GRUB_DEFAULT=0<br>save to<br>GRUB_DEFAULT=saved </em>/</p>
+<p>shell &gt; sudo vim /etc/default/grub<br>shell &gt; awk -F\’ ‘$1==”menuentry “ || $1==”submenu “ {print i++ “ : “ $2}; /\tmenuentry / {print “\t” i-1”&gt;”j++ “ : “ $2};’ /boot/grub/grub.cfg</p>
+<h1 id="Select-the-kernel-version-you-want-to"><a href="#Select-the-kernel-version-you-want-to" class="headerlink" title="Select the kernel version you want to"></a>Select the kernel version you want to</h1><p>shell &gt; sudo grub-set-default ‘1&gt;2’<br>shell &gt; sudo update-grub<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Settings Before Running APM Code</span><br><span class="line">- Change the path in `_amd.conf` in apm-kernel_4.15.0-55-generic/am1/amdeploy</span><br><span class="line">![](https://i.imgur.com/L8BZebC.png)</span><br><span class="line"></span><br><span class="line">- Change the deployed info in `_amnodespec.yaml` in apm-kernel_4.15.0-55-generic/am1/amdeploy</span><br><span class="line">![](https://i.imgur.com/Y576D14.png)</span><br><span class="line">    - The example above shows 1 compute-node with 2 test-VM and 1 server node</span><br><span class="line">![](https://i.imgur.com/I2OeBJl.png)</span><br><span class="line">    - The vm name must be the same as it in your kvm</span><br><span class="line">    </span><br><span class="line">- Server-node should have java8 installed</span><br></pre></td></tr></table></figure></p>
+<h2 id="add-repository-to-the-apt-get"><a href="#add-repository-to-the-apt-get" class="headerlink" title="add repository to the apt-get"></a>add repository to the apt-get</h2><p>sudo add-apt-repository ppa:openjdk-r/ppa<br>sudo apt-get update</p>
+<h2 id="install-openjdk-8"><a href="#install-openjdk-8" class="headerlink" title="install openjdk-8"></a>install openjdk-8</h2><p>sudo apt-get install openjdk-8-jdk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">- Change the file `install-no-kvm.sh` in apm-kernel_4.15.0-55-generic/</span><br><span class="line"></span><br><span class="line">- `sudo su` in root and  use `./amd11` to run the code </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Set /etc/hosts</span><br><span class="line">- Add «addm»(server node ip) to /etc/hosts on both compute node and server side e.g.: 192.168.100.90 addm</span><br><span class="line">- add compute node to /etc/hosts with the same name as in _amnodspec.yaml on server node e.g.: 192.168.100.91 addmcompute1</span><br><span class="line"></span><br><span class="line">![](https://i.imgur.com/wvYfXxP.png)</span><br><span class="line"></span><br><span class="line">![](https://i.imgur.com/j2wUsN8.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## testing if APM is working correctly:</span><br><span class="line">1. Make sure mac and ip address of the VM on the compute node is correct</span><br><span class="line">2. Install apache webserver on the VM (sudo apt-get install apache2)</span><br><span class="line">3. On the compute node run /opt/addm/bin/start-agent</span><br><span class="line">4. On the server node run /opt/addm/bin/start-server</span><br><span class="line">5. On the server node in a separate terminal run /opt/addm/bin/cli enable 1</span><br><span class="line">6. Issue http request to the vm (e.g. curl VM_IP). This has to be done from any host except Compute Node, otherwise it will not be trapped.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Web Server Deployment</span><br><span class="line">### Environment and Prerequisite</span><br><span class="line">- Ubuntu 14.04</span><br><span class="line">- Install JDK7</span><br><span class="line">```bash=</span><br><span class="line">sudo add-apt-repository ppa:openjdk-r/ppa  </span><br><span class="line">sudo apt-get update   </span><br><span class="line">sudo apt-get install openjdk-7-jdk</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>Install MySQL </p>
+<ul>
+<li>安裝過程會要你輸入root帳號的密碼<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>MySQL Setting</p>
+<ul>
+<li><p>Enter MySQL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create DB</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database apmdb;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Import DB</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; mysql -u root -p apmdb &lt; /home/test/iii/apm-kernel_4.15.0-55-generic/addmui/DBSchema/apm_v0.1.sql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add one ‘MySQL’ user “username = test, password = test”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user &apos;test&apos;@&apos;%&apos; identified by &apos;test&apos;;</span><br><span class="line">mysql&gt; grant all privileges on *.* to &apos;test&apos;@&apos;%&apos; with grant option;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Edit /etc/mysql/mysql.conf.d/mysqld.cnf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">replace: from bind-address = 127.0.0.1</span><br><span class="line">           to bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Restart MySQL service </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; service mysql restart</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Install Glassfish</p>
+<ol>
+<li>官網下載glassfish.zip </li>
+<li>mysql-connector-java-5.1.35-bin.jar，把它copy到glassfish3/glassfish/lib/ 裡面</li>
+<li>改glassfish 管理員密碼，預設帳號為 admin，因尚未設定密碼，在提示Enter admin password&gt; 時，請直接按下enter鍵，接下來再設定新的密碼。 </li>
+<li>啟動glassfish</li>
+<li>設定允許遠端安全管理，啟動glassfish後，執行以下指令，並重啟glassfish<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1</span></span><br><span class="line">wget http://download.java.net/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip</span><br><span class="line">unzip glassfish-3.1.2.2.zip</span><br><span class="line"><span class="comment">#2</span></span><br><span class="line">cp ~/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar ~/glassfish3/glassfish/lib/</span><br><span class="line"><span class="comment">#3</span></span><br><span class="line">~/glassfish3/bin/asadmin change-admin-password</span><br><span class="line"><span class="comment">#4</span></span><br><span class="line"><span class="built_in">cd</span> ~/glassfish3/bin</span><br><span class="line">./asadmin start-domain</span><br><span class="line"><span class="comment">#5</span></span><br><span class="line">./asadmin --host localhost --port 4848 <span class="built_in">enable</span>-secure-admin</span><br><span class="line">./asadmin restart-domain</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>設定SQL DB Connection Pool</p>
+</li>
+<li>Glassfish啟動後，打開瀏覽器連到<a href="https://localhost:4848" target="_blank" rel="noopener">https://localhost:4848</a><br><img src="https://i.imgur.com/2Rr40SZ.png" alt=""><ul>
+<li>點選JDBC</li>
+<li>點選JDBC Connection Pools</li>
+<li>點選New…</li>
+<li>Pool Name可以隨便你取，建議有APM字眼方便自己識別，如APMPool。<br>Resource Type點選javax.sql.DataSource。<br>Database Driver Vendor點選MySQL。<br>輸入完後點”Next”按鈕。<br><img src="https://i.imgur.com/UbT9x83.png" alt=""></li>
+<li>向下捲動可看到Additional Properties列表<br>輸入欄位如下所示<br>表 3: 新增acs JDBC Connection Pool Step2 Additional Properties輸入欄位</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User</td>
+<td>root</td>
+<td></td>
+</tr>
+<tr>
+<td>ServerName</td>
+<td>localhost</td>
+<td>要連到的MySQL server的hostname，安裝在同一台填localhost</td>
+</tr>
+<tr>
+<td>DatabaseName</td>
+<td>apmdb</td>
+<td></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>password</td>
+<td>請輸入當初安裝MySQL時所設定的root的密碼</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>再來勾選Url跟URL後點”Delete Properties”按鈕。額外再設一個欄位Encoding，設為UTF8。最後捲到最上面，點”Finish”按鈕，完成新增專案的JDBC Connection Pool。<br><img src="https://i.imgur.com/qgdRnqD.png" alt=""></li>
+<li><p>完成後，可以點擊上圖列表的Connection Pool的超連結，進到修改畫面，可點擊“Ping”按鈕，確定是否設定正確、能成功連線。在點擊“Ping”按鈕之前請先按照2.2.9之步驟進行SQL檔案匯入以建立資料庫表單。<br><img src="https://i.imgur.com/bVhdIsw.png" alt=""></p>
+</li>
+<li><p>新增JDBC Resources</p>
+<ul>
+<li>點JDBC Resources</li>
+<li>點New…<br><img src="https://i.imgur.com/bQC4wcP.png" alt=""></li>
+<li>JNDI Name填APMDatabase，Pool Name點選APMPool，點”OK”按鈕即可完成新增APM的JDBC Resources。</li>
+<li>可以看到APMDatabase已新增到JDBC Resources列表了。<br><img src="https://i.imgur.com/6QMuKDH.png" alt=""></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Intern/" rel="tag"># Intern</a>
+          
+            <a href="/tags/APM/" rel="tag"># APM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/31/APM-RabbitMQ/" rel="next" title="APM-RabbitMQ">
+                <i class="fa fa-chevron-left"></i> APM-RabbitMQ
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/31/Recompile-Kernel-on-Linux/" rel="prev" title="Recompile Kernel on Linux">
+                Recompile Kernel on Linux <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/1.jpg"
+                alt="Harry Hong" />
+            
+              <p class="site-author-name" itemprop="name">Harry Hong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/h123a456rr789y" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/harry.hong.7" target="_blank" title="Facebook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.instagram.com/harry_hong_hh1025/" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.flickr.com/photos/182941699@N06/" target="_blank" title="Flickr">
+                      
+                        <i class="fa fa-fw fa-flickr"></i>Flickr</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">description:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APM-Deployment"><span class="nav-number"></span> <span class="nav-text">APM Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#APM-structure"><span class="nav-number">1.</span> <span class="nav-text">APM structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Haas-Machine"><span class="nav-number">1.1.</span> <span class="nav-text">Haas Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-in-78-Lab"><span class="nav-number">1.2.</span> <span class="nav-text">Machine in 78 Lab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-Environment-Template"><span class="nav-number">2.</span> <span class="nav-text">Operating Environment Template</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-and-Run-KVM"><span class="nav-number">3.</span> <span class="nav-text">Install and Run KVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Passwordless-for-Root"><span class="nav-number">4.</span> <span class="nav-text">Passwordless for Root</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setup-Passwordless-with-ssh"><span class="nav-number">5.</span> <span class="nav-text">Setup Passwordless with ssh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Enter-to-the-end"><span class="nav-number"></span> <span class="nav-text">Enter to the end</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#enter-root-password"><span class="nav-number"></span> <span class="nav-text">enter root-password</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Select-the-kernel-version-you-want-to"><span class="nav-number"></span> <span class="nav-text">Select the kernel version you want to</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#add-repository-to-the-apt-get"><span class="nav-number">1.</span> <span class="nav-text">add repository to the apt-get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-openjdk-8"><span class="nav-number">2.</span> <span class="nav-text">install openjdk-8</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+<span id="busuanzi_container_site_pv">
+  Total Visit <span id="busuanzi_value_site_pv"></span> Times
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://harrys-story.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://h123a456rr789y.github.io/2019/08/31/APM-Deployment/';
+          this.page.identifier = '2019/08/31/APM-Deployment/';
+          this.page.title = 'APM-Deployment';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://harrys-story.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
