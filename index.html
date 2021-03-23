@@ -903,6 +903,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2021/03/24/3D感測技術/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/24/3D感測技術/" class="post-title-link" itemprop="url">3D感測技術</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-24 02:09:45 / Modified: 02:10:37" itemprop="dateCreated datePublished" datetime="2021-03-24T02:09:45+08:00">2021-03-24</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/24/3D感測技術/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/24/3D感測技術/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="3D感測技術"><a href="#3D感測技術" class="headerlink" title="3D感測技術"></a>3D感測技術</h1><p>3D感測技術目前主要可分為立體視覺（Stereo Vision）、結構光（Structured Light）、飛時測距（Time of Flight；簡稱：TOF</p>
+<h2 id="立體視覺（Stereo-Vision）"><a href="#立體視覺（Stereo-Vision）" class="headerlink" title="立體視覺（Stereo Vision）"></a>立體視覺（Stereo Vision）</h2><p>立體視覺（Stereo Vision）是基於人眼視差的原理，在自然光源下（<strong>被動式</strong>光源），透過兩個或兩個以上相機模組從不同的角度對同一物體拍攝影像，再進行三角測量法等運算來取得與物體之間的距離資訊。<br><img src="https://i.imgur.com/UL9qj5L.png" alt=""></p>
+<h3 id="優點："><a href="#優點：" class="headerlink" title="優點："></a>優點：</h3><ol>
+<li>省電</li>
+<li>明亮環境表現佳，適合在戶外長期運作</li>
+<li>低成本</li>
+</ol>
+<h3 id="缺點："><a href="#缺點：" class="headerlink" title="缺點："></a>缺點：</h3><ol>
+<li>軟體演算法複雜</li>
+<li>延遲性高</li>
+<li>不適合在昏暗環境使用</li>
+</ol>
+<h3 id="應用："><a href="#應用：" class="headerlink" title="應用："></a>應用：</h3><p>立體視覺目前已應用在各種3D相機、AR/VR頭戴式裝置、機器人等領域，通常與結構光、TOF混合使用，如智慧車應用領域。</p>
+<h2 id="結構光（Structured-Light）"><a href="#結構光（Structured-Light）" class="headerlink" title="結構光（Structured Light）"></a>結構光（Structured Light）</h2><p>結構光（Structured Light）是一種<strong>主動式</strong>深度感測技術，基本零組件包含IR發射器、IR相機模組、RGB相機模組等</p>
+<p>其原理是遊紅外線投影機先對物體發射特定圖案的光斑（Pattern），再經由攝影機來接收物體表面上的光斑圖案編碼（Light Coding），進而比對與原始投射光斑的異同，並利用三角原理計算出物體的三維座標。</p>
+<p><img src="https://i.imgur.com/o3p4m1C.png" alt=""></p>
+<h3 id="優點：-1"><a href="#優點：-1" class="headerlink" title="優點："></a>優點：</h3><ol>
+<li>深度準確高</li>
+</ol>
+<h3 id="缺點：-1"><a href="#缺點：-1" class="headerlink" title="缺點："></a>缺點：</h3><ol>
+<li>易受自然光照影響</li>
+<li>較適合短距離測量</li>
+</ol>
+<h3 id="應用：-1"><a href="#應用：-1" class="headerlink" title="應用："></a>應用：</h3><p>目前已應用於人臉辨識、體感遊戲機、工業用機器視覺檢測（AOI）等領域</p>
+<h2 id="飛行時間測距（Time-of-Flight；簡稱：TOF）"><a href="#飛行時間測距（Time-of-Flight；簡稱：TOF）" class="headerlink" title="飛行時間測距（Time of Flight；簡稱：TOF）"></a>飛行時間測距（Time of Flight；簡稱：TOF）</h2><p>TOF也是一種<strong>主動式</strong>深度感測技術，其原理為透過紅外線折返的時間去計算跟物體之間的距離，以得出3D景深圖。基本零組件包括IR發射器、IR接收器、RGB相機模組和感光元件或感應陣列。主要分為iTOF &amp; dTOF兩種類別</p>
+<h3 id="iTOF-indirect-ToF"><a href="#iTOF-indirect-ToF" class="headerlink" title="iTOF(indirect-ToF)"></a>iTOF(indirect-ToF)</h3><p>iToF 是利用發射特定頻率的光，檢測反射光和發射器之間的位置差距(算相位差)，測量飛行時間<br><img src="https://i.imgur.com/5gYJ8ue.png" alt=""></p>
+<h4 id="優點：-2"><a href="#優點：-2" class="headerlink" title="優點："></a>優點：</h4><ol>
+<li>較低成本</li>
+<li>較高解析度優勢<h4 id="缺點：-2"><a href="#缺點：-2" class="headerlink" title="缺點："></a>缺點：</h4></li>
+<li>適用於短距離測距 （環境光源會對電路產生干擾）</li>
+</ol>
+<h4 id="應用：-2"><a href="#應用：-2" class="headerlink" title="應用："></a>應用：</h4><p>主要應用在手機臉部辨識、手勢辨識等測距距離較短的場景中</p>
+<h3 id="dTOF-direct-ToF"><a href="#dTOF-direct-ToF" class="headerlink" title="dTOF (direct-ToF)"></a>dTOF (direct-ToF)</h3><p>dToF 是透過直接向測量物體發射雷射脈衝，並測量反射脈衝和發射器之間的時間間隔，得到光的飛行時間而直接計算待測物體的距離。<br>常見的 dToF 感測器接收端是使用單光子崩潰二極體 (SPAD)，或累崩式光電二極體 (APD)<br><img src="https://i.imgur.com/8gjedKh.png" alt=""></p>
+<h4 id="優點：-3"><a href="#優點：-3" class="headerlink" title="優點："></a>優點：</h4><ol>
+<li>在<strong>多個物件</strong>的感測上精準度較高</li>
+<li>更適用於較遠距的場景<h4 id="缺點：-3"><a href="#缺點：-3" class="headerlink" title="缺點："></a>缺點：</h4></li>
+<li>dToF 相較於 iToF 來說製作困難度要高上不少(需要較多sensor)</li>
+<li>成本較高</li>
+</ol>
+<h4 id="應用：-3"><a href="#應用：-3" class="headerlink" title="應用："></a>應用：</h4><p>應用在VR/AR和自駕車場景</p>
+<h2 id="三大感測比較"><a href="#三大感測比較" class="headerlink" title="三大感測比較"></a>三大感測比較</h2><p><img src="https://i.imgur.com/YkrHvWj.png" alt=""></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/04/28/passiv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1087,100 +1214,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/04/08/File-System/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/3_cut.png">
-      <meta itemprop="name" content="Harry Hong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harry's Stories">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/File-System/" class="post-title-link" itemprop="url">File System</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-08 13:29:54 / Modified: 19:31:28" itemprop="dateCreated datePublished" datetime="2020-04-08T13:29:54+08:00">2020-04-08</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/04/08/File-System/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/08/File-System/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>6 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Introduction to File system in FreeBSD</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/08/File-System/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1252,14 +1285,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

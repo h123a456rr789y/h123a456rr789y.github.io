@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[3D感測技術]]></title>
+    <url>%2F2021%2F03%2F24%2F3D%E6%84%9F%E6%B8%AC%E6%8A%80%E8%A1%93%2F</url>
+    <content type="text"><![CDATA[3D感測技術3D感測技術目前主要可分為立體視覺（Stereo Vision）、結構光（Structured Light）、飛時測距（Time of Flight；簡稱：TOF 立體視覺（Stereo Vision）立體視覺（Stereo Vision）是基於人眼視差的原理，在自然光源下（被動式光源），透過兩個或兩個以上相機模組從不同的角度對同一物體拍攝影像，再進行三角測量法等運算來取得與物體之間的距離資訊。 優點： 省電 明亮環境表現佳，適合在戶外長期運作 低成本 缺點： 軟體演算法複雜 延遲性高 不適合在昏暗環境使用 應用：立體視覺目前已應用在各種3D相機、AR/VR頭戴式裝置、機器人等領域，通常與結構光、TOF混合使用，如智慧車應用領域。 結構光（Structured Light）結構光（Structured Light）是一種主動式深度感測技術，基本零組件包含IR發射器、IR相機模組、RGB相機模組等 其原理是遊紅外線投影機先對物體發射特定圖案的光斑（Pattern），再經由攝影機來接收物體表面上的光斑圖案編碼（Light Coding），進而比對與原始投射光斑的異同，並利用三角原理計算出物體的三維座標。 優點： 深度準確高 缺點： 易受自然光照影響 較適合短距離測量 應用：目前已應用於人臉辨識、體感遊戲機、工業用機器視覺檢測（AOI）等領域 飛行時間測距（Time of Flight；簡稱：TOF）TOF也是一種主動式深度感測技術，其原理為透過紅外線折返的時間去計算跟物體之間的距離，以得出3D景深圖。基本零組件包括IR發射器、IR接收器、RGB相機模組和感光元件或感應陣列。主要分為iTOF &amp; dTOF兩種類別 iTOF(indirect-ToF)iToF 是利用發射特定頻率的光，檢測反射光和發射器之間的位置差距(算相位差)，測量飛行時間 優點： 較低成本 較高解析度優勢缺點： 適用於短距離測距 （環境光源會對電路產生干擾） 應用：主要應用在手機臉部辨識、手勢辨識等測距距離較短的場景中 dTOF (direct-ToF)dToF 是透過直接向測量物體發射雷射脈衝，並測量反射脈衝和發射器之間的時間間隔，得到光的飛行時間而直接計算待測物體的距離。常見的 dToF 感測器接收端是使用單光子崩潰二極體 (SPAD)，或累崩式光電二極體 (APD) 優點： 在多個物件的感測上精準度較高 更適用於較遠距的場景缺點： dToF 相較於 iToF 來說製作困難度要高上不少(需要較多sensor) 成本較高 應用：應用在VR/AR和自駕車場景 三大感測比較]]></content>
+      <tags>
+        <tag>Technology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Passiv]]></title>
     <url>%2F2020%2F04%2F28%2Fpassiv%2F</url>
     <content type="text"><![CDATA[Passiv Es gibt Verben, die keine Passivform bilden können. Dazu gehören alle Verben ohne Akkusativobjekt, also zum Beispiel reflexive Verben (z. B. sich schneiden) oder Verben, die im Perfekt mit sein gebildet werden (z. B. rennen). Vorgangspassiv Mit dem Vorgangspassiv (werden-Passiv) betonst du eine Handlung oder einen Vorgang: Was passiert? （用來描述發生的動作） Form: Werden + Partizip II Beispiel: Ein Mann wurde angefahren. Dem Verletzten wurde ein Verband angelegt. Jetzt wird der Mann ins Krankenhaus gebracht. Zeitstufen Zustandspassiv Mit dem Zustandspassiv beschreiben wir den Zustand nach einer Handlung. （用來表示動作完後的狀態) Form: Sein+ Partizip II Beispiel: Er ist verletzt. Die Tür ist geöffnet. Zeitstufen PassiversatzPassiv mit Modalverben Passiv mit können (sollen/müssen) = sein + zu + Infinitiv Beispiel: Die Experimente sind bereits von Kindergartenkindern durchzuführen. Passiv mit können = sich lassen + Infinitiv Beispiel: Die Experimente lassen sich bereits von Kindergartenkindern durchzuführen. Passiv mit können = sein + Adjektiv（mit Endung -bar/lich） Beispiel: Die Experimente sind bereits von Kindergartenkindern durchzuführbar.]]></content>
