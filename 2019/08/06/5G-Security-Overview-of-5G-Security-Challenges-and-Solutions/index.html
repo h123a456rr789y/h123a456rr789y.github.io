@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png">
+  <link rel="mask-icon" href="/images/profile_256x256.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"h123a456rr789y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Overview of 5G Security Challenges and Solutions Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5G Security (Overview of 5G Security Challenges and Solutions)">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2019/08/06/5G-Security-Overview-of-5G-Security-Challenges-and-Solutions/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="Overview of 5G Security Challenges and Solutions Note">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-06T14:34:58.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
+<meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="5G Security">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://h123a456rr789y.github.io/2019/08/06/5G-Security-Overview-of-5G-Security-Challenges-and-Solutions/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>5G Security (Overview of 5G Security Challenges and Solutions) | Harry's Stories</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Harry's Stories" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Harry's Stories</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Adventurer</p>
+      <a>
+        <img class="custom-logo-image" src="/images/cover_2.png" alt="Harry's Stories">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>photos</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2019/08/06/5G-Security-Overview-of-5G-Security-Challenges-and-Solutions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5G Security (Overview of 5G Security Challenges and Solutions)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-06 22:34:58" itemprop="dateCreated datePublished" datetime="2019-08-06T22:34:58+08:00">2019-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
+              </span>
+
+          
+            <div class="post-description">Overview of 5G Security Challenges and Solutions Note</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="5G-Security-Overview-of-5G-Security-Challenges-and-Solutions"><a href="#5G-Security-Overview-of-5G-Security-Challenges-and-Solutions" class="headerlink" title="5G Security (Overview of 5G Security Challenges and Solutions)"></a>5G Security (Overview of 5G Security Challenges and Solutions)</h1><p><a target="_blank" rel="noopener" href="https://hackmd.io/@rwvzlysARSKAimIEBfcqtQ/rkLRT4c4S">Slide Link</a></p>
+<h2 id="Overview-of-5G-Security-Challenges-and-Solutions"><a href="#Overview-of-5G-Security-Challenges-and-Solutions" class="headerlink" title="Overview of 5G Security Challenges and Solutions"></a>Overview of 5G Security Challenges and Solutions</h2><ul>
+<li><p>MEC, SDN, and (NFV) are sought out to meet the growing user and service demands with-in the constraints of capital expenditures</p>
+</li>
+<li><p>Capital expenditures (CapEx) and operational expenses (OpEx) through flexible network operation and management</p>
+</li>
+<li><p><strong>Multi-tenant</strong> shared cloud infrastructures among multiple virtual network operators require strict <strong>isolation at multiple levels</strong> to avoid illegal resource consumption and maintain integrity of users’ information of different operators </p>
+</li>
+<li><p>Network slicing:security isolation of network slices and security of inter-slice communications</p>
+</li>
+<li><p>SDN: require <strong>strong authentication and authorization</strong> for applications to <strong>avoid misuse</strong> of the network resources exposed to applications through the control plane. </p>
+</li>
+<li><p>VNFs can lead to inter-federated conflicts creating jeopardy in the whole network</p>
+</li>
+</ul>
+<h3 id="Key-Security-Challenges-in-5G"><a href="#Key-Security-Challenges-in-5G" class="headerlink" title="Key Security Challenges in 5G"></a>Key Security Challenges in 5G</h3><ul>
+<li><p>Flash network traffic: There will be a high number of end-user devices and new things (IoT).</p>
+</li>
+<li><p>Security of radio interfaces: Radio interface encryption keys are sent over insecure channels</p>
+</li>
+<li><p>User plane integrity: There is no cryptographic integrity protection for the user data plane</p>
+</li>
+<li><p>Mandated security in the network: Service-driven constraints on the security architecture lead to the optional use of security measures.</p>
+</li>
+<li><p>Roaming security: User-security parameters are not updated with roaming from one operator network to another, leading to security compromises with roaming.</p>
+</li>
+<li><p>Denial of service (DoS) attacks on the infrastructure: There are visible network control elements and unencrypted control channels.</p>
+</li>
+<li><p>Signaling storms: Distributed control systems require coordination, for example, non-access stratum (NAS) layer of (3GPP) protocols.</p>
+</li>
+<li><p>DoS attacks on end-user devices: There are no security measures for operating systems,applications, and configuration data on user devices.</p>
+</li>
+</ul>
+<h3 id="Security-Challenges-in-SDN"><a href="#Security-Challenges-in-SDN" class="headerlink" title="Security Challenges in SDN"></a>Security Challenges in SDN</h3><ul>
+<li><p>SDN enabling <strong>programmability</strong> and <strong>logically centralizing</strong> the network control planes</p>
+</li>
+<li><p>Programmable SDN controller <strong>updates or modifies flow rules</strong> in the data forwarding elements. This control information traffic can <strong>easily be identified</strong>, making it a visible entity in the network and rendering it a favorite choice for DoS attacks.</p>
+</li>
+<li><p>Centralization of network control can also make the controller a bottleneck for the whole network in the case of saturation(飽和) attacks</p>
+</li>
+<li><p>If malicious application are access or API are exposed can cause havoc DoS</p>
+</li>
+<li><p>Current SDN architecture (i.e., OpenFlow) requires the <strong>data forwarding</strong> elements to <strong>store traffic flow</strong> requests until the controller <strong>updates the flow forwarding rules</strong>.-&gt;prone to saturation attacks(due to limited flow buffer) </p>
+</li>
+<li><p>Dependence on the controller requires the <strong>control-data planes channel</strong> to be <strong>resilient to security attacks</strong> unlike the current optional use of security protocols and long restoration delays in large networks</p>
+</li>
+<li><p>Solution:</p>
+<ul>
+<li><strong>Multiple controllers</strong> may solve the challenge of controller availability or increase <strong>resilience</strong> to security attacks. However, misconfiguration of forwarding or inter-federated conflict may also hinder network security policys</li>
+</ul>
+</li>
+</ul>
+<h3 id="Security-Challenges-in-NFV"><a href="#Security-Challenges-in-NFV" class="headerlink" title="Security Challenges in NFV"></a>Security Challenges in NFV</h3><ul>
+<li><p>it has basic security challenges such as confidentiality, integrity,authenticity, and non-repudiation</p>
+</li>
+<li><p>NFV in mobile networks is the <strong>dynamic</strong> nature of VNFs that leads to configuration errors and thus security lapses</p>
+</li>
+<li><p>VNFs are vulnerable to typical cyber-attacks such as spoofing, sniffing, and DoS</p>
+</li>
+<li><p>NFV is also vulnerable to a special set of virtualization threats, such as side-channel attacks, flooding attacks, hypervisor hijacking, malware injection, and virtual machine (VM) migration related attacks, as well as cloud-specific attacks</p>
+</li>
+<li><p>Private deployments of NFV are vulnerable only to malicious <strong>insiders</strong> (e.g., a malicious administrator), since remote access to the system is prevented.</p>
+</li>
+<li><p>Due to the <strong>common accessibility</strong> of the infrastructure, a malicious user or a compromised provider of VNF can inserting malware or manipulating network traffic by <strong>interfere with the operations</strong>.</p>
+</li>
+<li><p>Operational interference and misuse of shared resources are infrastructure-level attacks on NFV</p>
+</li>
+<li><p>VNFs fetch dynamically from the cloud, some level of <strong>trust mechanism</strong>(of physical network devices) is needed to prevent malicious VNFs.</p>
+</li>
+</ul>
+<h3 id="Security-Challenges-in-Mobile-Clouds-and-MEC"><a href="#Security-Challenges-in-Mobile-Clouds-and-MEC" class="headerlink" title="Security Challenges in Mobile Clouds and MEC"></a>Security Challenges in Mobile Clouds and MEC</h3><ul>
+<li><p>cloud computing systems comprise various resources. It is possible that a user spreads <strong>malicious traffic</strong> to tear down the performance of the whole system, or stealthily access resource of other users.</p>
+</li>
+<li><p><strong>Multi-tenant</strong> cloud networks where tenants run their own control logic, interactions can cause conflicts in network configurations.</p>
+</li>
+<li><p>MEC’s level of protection is lower than the traditional cloud data center.</p>
+</li>
+<li><p>Mobile cloud computing (MCC) migrated edge computing in to 5G ( architectural and infrastructural modifications)</p>
+</li>
+<li><p>We catagorize MCC threats according to targeted cloud segments into frontend, back-end, and network-based mobile security threats.</p>
+</li>
+<li><p>Front-end Threat</p>
+<ul>
+<li>range from physical threats to application-based threats</li>
+</ul>
+</li>
+<li><p>Back-end Threat</p>
+<ul>
+<li>targeted toward the mobile cloud servers</li>
+</ul>
+</li>
+<li><p>network- based mobile Threat</p>
+<ul>
+<li>potential attacks include Wi- Fi sniffing, DoS attacks, address impersonation, and session hijacking</li>
+</ul>
+</li>
+<li><p>Main MEC concern: <strong>cloud-enabled IoT environment</strong> as well as the <strong>open APIs</strong> through which developers and creators serve contents to MEC applications and end users.</p>
+</li>
+<li><p>Third parties can launch various attacks on the MEC environment(with open API).</p>
+</li>
+<li><p>DoS attack, man-in-the-middle(MitM) attack, malicious mode problems, privacy leakages, and VM manipulation (security channeled toward the MEC nodes, which include the <strong>MEC server</strong> and other <strong>IoT nodes</strong>)</p>
+</li>
+</ul>
+<h3 id="Privacy-Challenges-in-5G"><a href="#Privacy-Challenges-in-5G" class="headerlink" title="Privacy Challenges in 5G"></a>Privacy Challenges in 5G</h3><ul>
+<li>Concern of user’s data, location, and identity</li>
+<li>The application developers andcompanies rarely mention how the data is stored and for what purposes it is going to be used.</li>
+<li>Threats(targeted on location privacy)<ul>
+<li>semantic information attacks(人電腦資訊不對等)</li>
+<li>timing attacks(通過裝置運算的用時來推斷出所使用的運算操作，通過運算時間推定資料的儲存裝置，或者利用通訊時間差進行資料竊取)</li>
+<li>boundary attacks</li>
+</ul>
+</li>
+<li>IMSI catching (fake BS)</li>
+<li>5G have <strong>different actors</strong> such as virtual mobile network operators (VMNOs), communication service providers (CSPs), and network infrastructure providers -&gt;<strong>synchronization</strong> of mismatching privacy policies among these actors will be a challenge</li>
+<li>Thus, 5G operators will lose full governance of security and privacy.</li>
+<li>No physical boundaries of 5G networks as they use cloud-based data storage and NFV features -&gt; 5G operators have <strong>no direct control of the data storage</strong> place in cloud environments.</li>
+</ul>
+<h2 id="Potential-Security-Solutions"><a href="#Potential-Security-Solutions" class="headerlink" title="Potential Security Solutions"></a>Potential Security Solutions</h2><ul>
+<li>SDN and NFV can solve huge network traffic challenges more cost effectively</li>
+<li>SDN:<ul>
+<li>has the capability to enable runtime <strong>resource (e.g., bandwidth)assignment</strong> to particular parts of the network as the need arises. </li>
+<li>The SDN controller can <strong>gather network stats(visibility)</strong> through the southbound API from network equipment to see if the traffic levels increase.</li>
+</ul>
+</li>
+<li>NFV:<ul>
+<li>services from the core network cloud can be transferred toward the <strong>edge</strong> to meet the user requirements.</li>
+<li>enables the provision of <strong>virtual slices</strong> or resources at runtime to meet the growing traffic demands or surges in traffic at different network locations.</li>
+</ul>
+</li>
+<li>End-to-end encryption protocol can be used for user plane integrity.</li>
+<li>Roaming security and network- wide mandated security policies can be achieved using <strong>centralized systems</strong> that have global visibility of the users activities and behaviors (e.g., SDN)</li>
+<li><strong>Signaling storms</strong> will be more challenging due to the excessive   UEs, small BS, and high user mobility. (cloud radio access network <strong>(C-RAN)</strong> and <strong>edge</strong> computing are the potential solutions)</li>
+</ul>
+<h3 id="Security-Solutions-for-SDN"><a href="#Security-Solutions-for-SDN" class="headerlink" title="Security Solutions for SDN"></a>Security Solutions for SDN</h3><ul>
+<li><p>Having <strong>visiblity</strong> of the network, <strong>centralized control</strong>, and programmability in network elements, SDN enables consistent security <strong>policies</strong> and facilitates <strong>quick threat identification</strong> through a cycle of harvesting intelligence from the network resources, states, and flows.</p>
+</li>
+<li><p>Solution:</p>
+<ul>
+<li>SDN architecture supports <strong>highly reactive</strong> and <strong>proactive security monitoring</strong>, traffic analysis, and response systems to facilitate network forensics, the alteration of security policies, and security service insertion</li>
+</ul>
+</li>
+<li><p>SDN is flow- or packet-level granularity that provides <strong>transparency</strong> in terms of packet origin or <strong>source</strong>, the <strong>route</strong> it takes, and even the <strong>content</strong>. </p>
+</li>
+<li><p>Solution:</p>
+<ul>
+<li>Security applications can <strong>gather samples of flows or packets through</strong> the <strong>control plane</strong> from <strong>any network perimeter</strong> to check their content regardless of the network ingress or egress ports, unlike traditional networks in which the security appliances normally reside in the entry points.</li>
+<li>This capability of SDN lays the foundation for <strong>network-wide consistent security policies</strong>, early threat identification at any network location, and <strong>quick response</strong> by updating the flow tables to route traffic to <strong>intrusion detection systems (IDSs)</strong> or <strong>firewalls</strong> at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Security-Solutions-for-NFV"><a href="#Security-Solutions-for-NFV" class="headerlink" title="Security Solutions for NFV"></a>Security Solutions for NFV</h3><ul>
+<li>The proposed architecture (prsent by European Telecommunications Standards Institute (ETSI))provides security not only to the <strong>virtual functions</strong> in a <strong>multi-tenant environment</strong>, but also to the <strong>physical</strong> entities of a telecommunication network.</li>
+<li>Hypervisors is proposed in to provide <strong>hardware-based protection</strong> to <strong>private information</strong> and <strong>detect corrupt software</strong> in virtualized environments.</li>
+<li>In NFV systems, security protection solutions such as <strong>firewalls</strong> and <strong>IDSs</strong> can be used to prevent <strong>outside</strong> attacks.</li>
+<li><strong>Identity and access management mechanisms</strong> (e.g., role-based access control) can be used to mitigate the impact of <strong>insider</strong> attacks</li>
+<li><strong>Infrastructure-level</strong> attacks can be prevented by <strong>monitoring of the resource consumption of each user</strong> and <strong>preventing malicious requests</strong> according to a blacklist of IP addresses.</li>
+<li>In order to increase the trust between different entities,a  chain of <strong>trust relationships</strong> needs to be created and maintained in NFV.</li>
+<li>Solutions based on <strong>cryptographic</strong> techniques, such as <strong>message stream encryption</strong>, can be used to guarantee the confidentiality of VNFs</li>
+<li>Secure outsourcing is another viable solution in NFV to transfer the sensitive information to external networks.(protect sensitive information &amp; validate the integrity of data)</li>
+</ul>
+<h3 id="Security-Solutions-for-Mobile-Clouds-and-MEC"><a href="#Security-Solutions-for-Mobile-Clouds-and-MEC" class="headerlink" title="Security Solutions for Mobile Clouds and MEC"></a>Security Solutions for Mobile Clouds and MEC</h3><ul>
+<li><p>Main security measures in MCC </p>
+<ul>
+<li><strong>Virtualization</strong> technologies</li>
+<li><strong>Redesign of encryption methods</strong></li>
+<li><strong>Dynamic allocation of data processing points.</strong></li>
+</ul>
+</li>
+<li><p>Virtualization comes as a natural option for securing cloud services, since each <strong>end node</strong> connects to a <strong>specific virtual instance</strong> in the cloud via a VM.</p>
+</li>
+<li><p><strong>Isolation</strong> of each user’s virtual connection </p>
+</li>
+<li><p>For specific security threats such as HX-DoS, <strong>learning-based systems</strong> are beter solution.</p>
+</li>
+<li><p>To secure the mobile end devices -&gt;anti-malware</p>
+</li>
+<li><p>In MCC data and storage, the security framework will consist of <strong>energy-efficient</strong> mechanisms for the <strong>integrity verification</strong> of data and storage services in conjunction with a public provable data possession scheme and some lightweight compromise-resilient storage outsourcing</p>
+</li>
+<li><p>Application security, some proposed frameworks are based on securing elastic applications on <strong>mobile devices</strong> for cloud computing, a <strong>lightweight dynamic credential generation mechanism</strong> for user identity protection, an in-device** spatial cloaking mechanism** for privacy protection</p>
+</li>
+<li><p>Strategy</p>
+<ul>
+<li>Use of gateways at strategic points on the networks is highly recommended.(ex. IoT gateway)</li>
+<li>Ensuring that the application hosted at the edge server <strong>authenticates any user attempting to access the application resources</strong></li>
+</ul>
+</li>
+<li><p>MEC platform should give assurance of data integrity</p>
+</li>
+</ul>
+<h3 id="Security-Solutions-for-Privacy-in-5G"><a href="#Security-Solutions-for-Privacy-in-5G" class="headerlink" title="Security Solutions for Privacy in 5G"></a>Security Solutions for Privacy in 5G</h3><ul>
+<li><p>5G will require better mechanisms for accountability, data minimization, transparency, openness, and access control</p>
+</li>
+<li><p>A hybrid cloud-based approach is alsorequired where mobile operators are able to store and process <strong>highly sensitive data locally</strong> and <strong>less sensitive data in public clouds</strong></p>
+</li>
+<li><p>Encryption-based system, a message can be encrypted before sending to a location-based services (LBS) provider</p>
+</li>
+<li><p>Obfuscation(模糊化) are also crucial, where the quality of location information is reduced in order to protect location privacy.</p>
+</li>
+<li><p>Location-cloaking-based(隱藏地點) algorithms are quite useful to handle some major location privacy attacks such as timing and boundary attacks</p>
+</li>
+<li><p>IMSI catching attacks(Sloved by SUPI and SUCI)</p>
+</li>
+<li><p>Level of privacy security:</p>
+<ul>
+<li>government-level regulation</li>
+<li>industry level regulation</li>
+<li>consumer-level regulation</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/5G-Security/" rel="tag"><i class="fa fa-tag"></i> 5G Security</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/08/06/5G-Security-5G-America-White-Paper/" rel="prev" title="5G Security (5G America White Paper)">
+      <i class="fa fa-chevron-left"></i> 5G Security (5G America White Paper)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/21/Weihnachtsabenteuer/" rel="next" title="Weihnachtsabenteuer 聖誕冒險記">
+      Weihnachtsabenteuer 聖誕冒險記 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5G-Security-Overview-of-5G-Security-Challenges-and-Solutions"><span class="nav-number">1.</span> <span class="nav-text">5G Security (Overview of 5G Security Challenges and Solutions)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-of-5G-Security-Challenges-and-Solutions"><span class="nav-number">1.1.</span> <span class="nav-text">Overview of 5G Security Challenges and Solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Security-Challenges-in-5G"><span class="nav-number">1.1.1.</span> <span class="nav-text">Key Security Challenges in 5G</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Challenges-in-SDN"><span class="nav-number">1.1.2.</span> <span class="nav-text">Security Challenges in SDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Challenges-in-NFV"><span class="nav-number">1.1.3.</span> <span class="nav-text">Security Challenges in NFV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Challenges-in-Mobile-Clouds-and-MEC"><span class="nav-number">1.1.4.</span> <span class="nav-text">Security Challenges in Mobile Clouds and MEC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Privacy-Challenges-in-5G"><span class="nav-number">1.1.5.</span> <span class="nav-text">Privacy Challenges in 5G</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Potential-Security-Solutions"><span class="nav-number">1.2.</span> <span class="nav-text">Potential Security Solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Solutions-for-SDN"><span class="nav-number">1.2.1.</span> <span class="nav-text">Security Solutions for SDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Solutions-for-NFV"><span class="nav-number">1.2.2.</span> <span class="nav-text">Security Solutions for NFV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Solutions-for-Mobile-Clouds-and-MEC"><span class="nav-number">1.2.3.</span> <span class="nav-text">Security Solutions for Mobile Clouds and MEC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-Solutions-for-Privacy-in-5G"><span class="nav-number">1.2.4.</span> <span class="nav-text">Security Solutions for Privacy in 5G</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Harry Hong"
+      src="/uploads/3_cut.png">
+  <p class="site-author-name" itemprop="name">Harry Hong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/h123a456rr789y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;h123a456rr789y" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/harry.hong.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;harry.hong.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/harry_hong_hh1025/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;harry_hong_hh1025&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/li-yu-hong-52390815b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;li-yu-hong-52390815b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

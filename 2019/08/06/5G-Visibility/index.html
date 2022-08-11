@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png">
+  <link rel="mask-icon" href="/images/profile_256x256.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"h123a456rr789y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="5G Visibility for 5G Security Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5G Visibility">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2019/08/06/5G-Visibility/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="5G Visibility for 5G Security Note">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/kMsVg4s.png">
+<meta property="og:image" content="https://i.imgur.com/Q2pkYvz.png">
+<meta property="og:image" content="https://i.imgur.com/QMoMUvf.png">
+<meta property="og:image" content="https://i.imgur.com/0DlpSwK.png">
+<meta property="og:image" content="https://i.imgur.com/voegVk6.png">
+<meta property="article:published_time" content="2019-08-05T17:03:00.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
+<meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="5G Security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/kMsVg4s.png">
+
+<link rel="canonical" href="https://h123a456rr789y.github.io/2019/08/06/5G-Visibility/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>5G Visibility | Harry's Stories</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Harry's Stories" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Harry's Stories</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Adventurer</p>
+      <a>
+        <img class="custom-logo-image" src="/images/cover_2.png" alt="Harry's Stories">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>photos</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2019/08/06/5G-Visibility/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5G Visibility
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-06 01:03:00" itemprop="dateCreated datePublished" datetime="2019-08-06T01:03:00+08:00">2019-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
+              </span>
+
+          
+            <div class="post-description">5G Visibility for 5G Security Note</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="5G-Visibility"><a href="#5G-Visibility" class="headerlink" title="5G Visibility"></a>5G Visibility</h1><h2 id="The-unsung-hero-of-5G-visibility–the-network-packet-broker-Reader-Forum"><a href="#The-unsung-hero-of-5G-visibility–the-network-packet-broker-Reader-Forum" class="headerlink" title="The unsung hero of 5G visibility–the network packet broker (Reader Forum)"></a>The unsung hero of 5G visibility–the network packet broker (Reader Forum)</h2><pre><code>Link: https://www.rcrwireless.com/20190328/5g/5g-visibility-reader-forum
+</code></pre>
+<ul>
+<li><p>5G is pushing line speeds toward 100G. As a result, network, application, and SIP monitoring solutions just aren’t prepared to capture the influx of the additional traffic (and upgrading those solutions is often cost prohibitive)</p>
+</li>
+<li><p>simple solution to the problem of <strong>increased traffic</strong> due to 5G – using new <strong>network packet broker</strong> technology to load balance traffic across lower link speeds</p>
+</li>
+<li><p>Stressful it will be for Mobile Network Operator(MNO) with high-loaded traffic</p>
+</li>
+<li><p>5G -&gt; Small Cells -&gt; Small cell backhaul requires many more high-speed links connecting to the wireline network -&gt; All these Links should be protect and monitor</p>
+</li>
+<li><p>Network packet brokers:Cut the Band in to small part(segmentation) which makes each part easily managed</p>
+</li>
+<li><p>NPB:  efficiently manage traffic to the monitoring tools</p>
+</li>
+<li><p>packet broker Consideration</p>
+<ul>
+<li>Don’t disregard the importance of a TAP. TAPs provide the intermediary function that delivers a fail-safe connection that protects live traffic.</li>
+<li>Load balancing is the 100G workaround.Divide to several ports</li>
+<li>Look for packet brokers that “scale out” not “up.” When deploying 5G it’s vital to deploy solution that can scale quickly, without requiring hardware to be pulled for upgrades or swapped out with larger units.</li>
+<li>Many of the advanced features such as load balancing, port mapping, and filtering are not a standard inclusion in today’s packet </li>
+<li>be aware of the movement toward hybrid cloud environments. Deploy a physical packet broker on-premises, use a software-based version of a packet broker on a white-box server, or leverage the basic data-sharing settings in a cloud-based service.</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-Path-to-5G-is-Paved-with-Network-Visibility"><a href="#The-Path-to-5G-is-Paved-with-Network-Visibility" class="headerlink" title="The Path to 5G is Paved with Network Visibility"></a>The Path to 5G is Paved with Network Visibility</h2><pre><code>Link: https://www.extremenetworks.com/extreme-networks-blog/the-path-to-5g-is-paved-with-network-visibility
+</code></pre>
+<ul>
+<li><p>5G-capablility and what they must be able to handle:</p>
+<ul>
+<li>Mobile data throughput rates that are 1000 times faster </li>
+<li>1000x more devices than are connected</li>
+<li>Peak data rates that are 100 times greater</li>
+<li>Service deployments that take 1&#x2F;1000 the time</li>
+<li>One tenth the power consumption</li>
+<li>Five nines reliability, with much less the latency</li>
+</ul>
+<p>  <img src="https://i.imgur.com/kMsVg4s.png"></p>
+</li>
+<li><p>Steering Traffic to Relevant Analytics</p>
+<ul>
+<li>5G is software-based, virtualized networks, their visibility and analytics infrastructure. Network packet brokers (NPBs) become critical.</li>
+<li>Decisions that need to be made in order to properly handle these traffic flows include:<ul>
+<li>Are subscribers being treated fairly and according to their service level agreements?</li>
+<li>Are the locations of all subscribers and other connected entities correctly identified?</li>
+<li>Are subscribers and connected entities associated with the right cell towers?</li>
+<li>Is all traffic secure and free from intrusion or DDoS attacks?</li>
+<li>Is video and voice being handled properly, whether the requirements are real-time or asynchronous?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Extreme Networks visibility solution.<br>  <img src="https://i.imgur.com/Q2pkYvz.png"></p>
+<ul>
+<li>Session Correlation</li>
+</ul>
+</li>
+<li><p>Deployment alternatives for physical and virtual network visibility<br>  <img src="https://i.imgur.com/QMoMUvf.png"></p>
+<ul>
+<li>Virtual TAPs (deployed in a VM within the hypervisor environment that hosts VNFs) intercept inter-VM traffic and forward relevant traffic flows to centrally deployed physical or virtual network packet brokers for further processing.</li>
+</ul>
+</li>
+<li><p>Session Director</p>
+<ul>
+<li>Network Packet Brokers (NPBs) — to aggregate, replicate, and forward relevant network traffic flows to them for analysis   </li>
+<li>Session Director session-aware forwarding decisions that are then enforced by the packet broker nodes.</li>
+<li>enables operators to deploy best-of-breed analytics tools for each type of network traffic, and adapt to fast-changing monitoring needs</li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-Visibility-Important-to-5G-Success"><a href="#Network-Visibility-Important-to-5G-Success" class="headerlink" title="Network Visibility Important to 5G Success"></a>Network Visibility Important to 5G Success</h2><pre><code>Link:https://cadsourcing.com/network-visibility-important-5g-success/
+</code></pre>
+<ul>
+<li>The network performance key is about pricing and network coverage.</li>
+</ul>
+<h2 id="Embedded-Network-Visibility-for-Pervasive-Real-Time-Monitoring-and-Automated-Actions"><a href="#Embedded-Network-Visibility-for-Pervasive-Real-Time-Monitoring-and-Automated-Actions" class="headerlink" title="Embedded Network Visibility for Pervasive Real-Time Monitoring and Automated Actions"></a>Embedded Network Visibility for Pervasive Real-Time Monitoring and Automated Actions</h2><ul>
+<li><p>Need <strong>comprehensive visibility</strong> into theoperational state of the network and into the traffic that is transiting the network</p>
+</li>
+<li><p>The Visibility Challenge</p>
+<ul>
+<li>Routers and switches provide clear and comprehensive network visibility can <strong>limit the ability</strong> to quickly, flexibly, and cost-effectively extract the data organizations requirement to meet SLA</li>
+<li>Existing approaches to network visibility often suffer from limited comprehensiveness</li>
+<li>Challenge:<ul>
+<li>Limited in scope : Difficult to address diverse operational needs</li>
+<li>Inadequate ability:</li>
+<li>Static</li>
+<li>Finite capabilities</li>
+<li>Complex and costly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Embedded Visibility Solution </p>
+<ul>
+<li><strong>Comprehensive</strong>, <strong>real-time</strong> visibility needed for network operations and automation</li>
+<li>ability to address <strong>end-user application</strong> or <strong>service needs</strong>, analyze,automate, and generate reports on context-rich data, and provide the fine-grain targeted visibility needed to tune the network for specific device or service needs.</li>
+</ul>
+</li>
+<li><p>Comprehensive Visibility in theDigital Era</p>
+<ul>
+<li>dynamic, rich, and scalable classification and actions at multiple layers from network to workloads as well as highly flexible, granular real-time visibility of specific flows. </li>
+<li>combines both software and hardware innovation</li>
+</ul>
+</li>
+<li><p>Extreme SLX Insight Architecture</p>
+<ul>
+<li>pervasive visibility architecture</li>
+<li>Extreme SLX-OS software and Extreme SLX platform <strong>hardware</strong> features to provide organizations <strong>unparalleled network visibility</strong> <strong>without impacting</strong> normal network operation or performance.<br>  <img src="https://i.imgur.com/0DlpSwK.png"></li>
+<li>Benefits: deploy high-performance and flexible visibility applications via dedicated resources on the platform</li>
+<li>Dedicated internal and external bandwidth that <strong>allows applications running in the open KVM environment</strong> to extract data  without disrupting forwarding or control plane traffic</li>
+<li>KVM environment supports <strong>Wireshark</strong> and <strong>tcpdump</strong> can be accessed via pretested RESTful utilities such as Chrome and Curl</li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-Packet-Broker-NPB"><a href="#Network-Packet-Broker-NPB" class="headerlink" title="Network Packet Broker (NPB)"></a>Network Packet Broker (NPB)</h2><pre><code>Link: https://www.netadmin.com.tw/netadmin/zh-tw/feature/AE19E93B821F4B5DBF015A25FC8B18BC
+Link: http://www.gcomtw.com/pro_view.php?id=218&amp;ids=253&amp;gclid=EAIaIQobChMItPPtrrSu4wIVhauWCh0sfQR7EAAYAiAAEgKYs_D_BwE
+</code></pre>
+<ul>
+<li>NPB先行篩選配送封包 提升網管資安設備效率</li>
+<li>深度封包檢測（DPI），拆解Layer 2至Layer 7，取出標頭、通訊協定、內容（Payload）等資訊，再利用系統內建工具執行比對、過濾和分析，經過一種設備平台，就需要被開拆解析後再重新封裝傳遞，node 增加就latency就爆炸</li>
+<li>專司負責以深度封包檢測技術(DPI)對封包進行拆解，再派送到效能管理、資安偵測與防禦平台，以提升整體效能。 Gigamon、IXIA、Netscout、VSS Monitoring等，皆屬於網路封包中介技術供應商</li>
+<li>以往是用流量複製器（<strong>TAP</strong>），或者仰賴交換器內建的<strong>Port Mirror</strong>功能，將網路流量複製一份送至網管或資安控管設備，再進行深入分析與偵查，但每個node所承受的封包流量均為一致，仍需各自解析封包並篩選資訊。</li>
+<li>PacketX提供的GRISM產品屬進階的網路封包中介方案，其技術可將封包的多層封裝拆解至最初狀態，或者直接透視至最內層封包進行篩選分配。</li>
+<li>Gigamon蒐集篩選流量，Flow Mapping技術，可先行從流量中掌握網路整體連線狀態，再執行分流、派送處理，連線封包有時重複，可先行刪除重複之處，再提供給後端分析，</li>
+<li>Gigamon亦有建構在Hypervisor之上的虛擬主機，也就是GigaVUE-VM軟體。不需要在虛擬主機中安裝任何程式，借助vSwitch機制即可導出流量。</li>
+<li>但由於Port Mirror本身只負責傳送流量，<strong>不具備確認送達的機制</strong>，當網路流量變大，需要傳送的封包變多，Mirror流量的優先順序將自動被降低，如此一來即無法避免封包遺失問題。因此建議以TAP方式為主，可確保資料的完整性。</li>
+</ul>
+<p><img src="https://i.imgur.com/voegVk6.png"></p>
+<ul>
+<li>NPM(Network Performance Monitor)</li>
+<li>APM(Application Performance Management)</li>
+<li>CEM(Customer Experience Management)</li>
+<li>NPB功能<ul>
+<li><pre><code>Header Stripping: 省去後端分析工具在解析封包標頭時可能遇到的問題，支援: VLAN, MPLS, PPOE…等格式。
+</code></pre>
+<ul>
+<li><pre><code>Data Capture: 採集過濾後的資料生成PACP檔案供日後分析使用。
+</code></pre>
+<ul>
+<li><pre><code>De-duplication: 解決自實體網路或虛擬網路各線路中蒐集得的重複封包問題。
+</code></pre>
+<ul>
+<li><pre><code>Time Stamping: 替封包添加電子時戳，可協助鑑定網路延遲。
+</code></pre>
+<ul>
+<li><pre><code>Data Masking: 隱蔽封包內容的敏感及私人機密資料如信用卡卡號…等。
+</code></pre>
+<ul>
+<li><pre><code>Packet Slicing: 裁切封包省去封包內之不必要內容只保留重要資訊以提升後端分析工具的分析效率。
+</code></pre>
+<ul>
+<li><pre><code>Time Stamping: 替封包添加電子時戳，可協助鑑定網路延遲。
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-Reasons-to-Use-a-Network-Packet-Broker"><a href="#5-Reasons-to-Use-a-Network-Packet-Broker" class="headerlink" title="5 Reasons to Use a Network Packet Broker"></a>5 Reasons to Use a Network Packet Broker</h2><pre><code>   Link: https://blog.niagaranetworks.com/blog/5-reasons-to-use-a-network-packet-broker
+</code></pre>
+<ul>
+<li><p>Network Packet Broker (NPB) enhance network monitoring for superior network security.</p>
+</li>
+<li><p>NPBs are devices that receive network traffic as input from multiple SPAN ports, then manipulate the traffic by breaking it down into c<strong>hunks of related data and transmitting the data chunks to their respective monitoring and security tools</strong>.</p>
+</li>
+<li><p>5 reasons you should use a Network Packet Broker:</p>
+<ul>
+<li>Efficient Traffic Filtering:<ul>
+<li>Efficiently filters the network traffic it receives and routes it to the relevant monitoring tools</li>
+<li>NPBs ensures the efficiency, reliability, and effectiveness of each of the monitoring tools.</li>
+</ul>
+</li>
+<li>Secure Removal of Repetitive Data<ul>
+<li>NPB removes all such packets that contain redundant data, which ultimately saves your monitoring tools from being overloaded</li>
+</ul>
+</li>
+<li>Network Packet Brokers Optimize Packets<ul>
+<li>Optimize the packets in a number of other ways, including conditional packet slicing and time stamping</li>
+</ul>
+</li>
+<li>Capacity for Fault Tolerance<ul>
+<li>support fault tolerance, i.e., the ability to minimize any unwanted downtime that might be caused by unfavorable events like power failures, malfunction</li>
+</ul>
+</li>
+<li>Network Packet Brokers for Load Balancing<ul>
+<li><strong>Load Balancing</strong> is another reason that makes Network Packet Brokers the prime devices to enhance network security. </li>
+<li>Effectively divide all the network traffic to their relevant monitoring tools</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/5G-Security/" rel="tag"><i class="fa fa-tag"></i> 5G Security</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/06/5G-Security-5G-America-White-Paper/" rel="next" title="5G Security (5G America White Paper)">
+      5G Security (5G America White Paper) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5G-Visibility"><span class="nav-number">1.</span> <span class="nav-text">5G Visibility</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-unsung-hero-of-5G-visibility%E2%80%93the-network-packet-broker-Reader-Forum"><span class="nav-number">1.1.</span> <span class="nav-text">The unsung hero of 5G visibility–the network packet broker (Reader Forum)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Path-to-5G-is-Paved-with-Network-Visibility"><span class="nav-number">1.2.</span> <span class="nav-text">The Path to 5G is Paved with Network Visibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Visibility-Important-to-5G-Success"><span class="nav-number">1.3.</span> <span class="nav-text">Network Visibility Important to 5G Success</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Embedded-Network-Visibility-for-Pervasive-Real-Time-Monitoring-and-Automated-Actions"><span class="nav-number">1.4.</span> <span class="nav-text">Embedded Network Visibility for Pervasive Real-Time Monitoring and Automated Actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Packet-Broker-NPB"><span class="nav-number">1.5.</span> <span class="nav-text">Network Packet Broker (NPB)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Reasons-to-Use-a-Network-Packet-Broker"><span class="nav-number">1.6.</span> <span class="nav-text">5 Reasons to Use a Network Packet Broker</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Harry Hong"
+      src="/uploads/3_cut.png">
+  <p class="site-author-name" itemprop="name">Harry Hong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/h123a456rr789y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;h123a456rr789y" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/harry.hong.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;harry.hong.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/harry_hong_hh1025/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;harry_hong_hh1025&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/li-yu-hong-52390815b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;li-yu-hong-52390815b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

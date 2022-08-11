@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png">
+  <link rel="mask-icon" href="/images/profile_256x256.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"h123a456rr789y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="RabbitMQ for APM Implementation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APM-RabbitMQ">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2019/08/31/APM-RabbitMQ/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="RabbitMQ for APM Implementation">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/qrM5NNk.png">
+<meta property="og:image" content="https://i.imgur.com/uMHY3gQ.png">
+<meta property="og:image" content="https://i.imgur.com/dJ3QMgE.png">
+<meta property="og:image" content="https://i.imgur.com/7zOLmcP.png">
+<meta property="og:image" content="https://i.imgur.com/QUTTa0g.png">
+<meta property="og:image" content="https://i.imgur.com/RT93Hvf.png">
+<meta property="og:image" content="https://i.imgur.com/021Ubjp.png">
+<meta property="article:published_time" content="2019-08-31T08:20:33.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
+<meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="Intern">
+<meta property="article:tag" content="APM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/qrM5NNk.png">
+
+<link rel="canonical" href="https://h123a456rr789y.github.io/2019/08/31/APM-RabbitMQ/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>APM-RabbitMQ | Harry's Stories</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Harry's Stories" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Harry's Stories</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Adventurer</p>
+      <a>
+        <img class="custom-logo-image" src="/images/cover_2.png" alt="Harry's Stories">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>photos</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2019/08/31/APM-RabbitMQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          APM-RabbitMQ
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-31 16:20:33" itemprop="dateCreated datePublished" datetime="2019-08-31T16:20:33+08:00">2019-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
+              </span>
+
+          
+            <div class="post-description">RabbitMQ for APM Implementation</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="OpenStack-RabbitMQ-Deep-Dive-for-Integration-and-Monitoring"><a href="#OpenStack-RabbitMQ-Deep-Dive-for-Integration-and-Monitoring" class="headerlink" title="OpenStack RabbitMQ Deep Dive for Integration and Monitoring"></a>OpenStack RabbitMQ Deep Dive for Integration and Monitoring</h1><pre><code>Link:https://messeiry.com/openstack-rabbitmq-deep-dive/
+</code></pre>
+<h2 id="What-is-RabbitMQ"><a href="#What-is-RabbitMQ" class="headerlink" title="What is RabbitMQ ?"></a>What is RabbitMQ ?</h2><ul>
+<li><p>Open source message broker</p>
+</li>
+<li><p>Lightweight and easy to deploy on-premises and in the cloud</p>
+</li>
+<li><p>Can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements</p>
+</li>
+<li><p>Rabbit MQ uses AMQP 0-9-1 protocol (Advanced Message Queuing Protocol); which enables conforming client applications to communicate with conforming messaging middleware brokers.</p>
+</li>
+</ul>
+<h3 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3><ul>
+<li>Message brocker that implement AMQP(Advanced Message Queuing Protocol)</li>
+<li>AMPQP standardlizes messaging using Producers, Broker and Consumers</li>
+<li>Messaging increases loose coupling and scalability<br><img src="https://i.imgur.com/qrM5NNk.png"></li>
+<li>Publishing: Producer send Message to Exchange and Exchange forward Message to the queue</li>
+<li>Consuming: Consumer pick up the Message from the queue</li>
+</ul>
+<p><img src="https://i.imgur.com/uMHY3gQ.png"></p>
+<ul>
+<li>Guarantee of sending messages to queue and ack from consumer</li>
+<li>Failure<ul>
+<li>Redilivery<ul>
+<li>scenario 1: Producer doesn’t get confirm from queue cause dupicated meesages</li>
+<li>scenario 2: Ack failure (Message remain in the queue) cause a consumer get the message again</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/dJ3QMgE.png"></p>
+<ul>
+<li><p>Message will be sent with routing keys</p>
+</li>
+<li><p>Type of exchange:</p>
+<ul>
+<li>Fanout: Send the message to all the queue</li>
+<li>Direct: Send to the queue where routing key&#x3D;binding key</li>
+<li>Topic: allows partial match (ex: routing key&#x3D;red. binding key&#x3D; red.blue will send the message)</li>
+<li><em>(star) can substitute for exactly one word (shape.</em> )</li>
+<li>#(hash) can substitute for zero or more word(shape.# )</li>
+<li>Header: message header instead of routing key</li>
+</ul>
+</li>
+<li><p>Default(nameless) exchange</p>
+<ul>
+<li>routing key &#x3D; queue name<br>  <img src="https://i.imgur.com/7zOLmcP.png"></li>
+<li>if routing key &#x3D;queue name then send message to the queue</li>
+<li>Special exchange created by RabbitMQ</li>
+<li>Compares routing key with queue name</li>
+<li>Indirectly allows sending directly to queue</li>
+</ul>
+</li>
+<li><p>Core concept of Rabbit Message Queue</p>
+<ul>
+<li>Producer emits massages to exchange</li>
+<li>Consumer recieves messages from queue</li>
+<li>Binding connects an exchange with a queue using binding key</li>
+<li>Exchange compares routing key with binding key</li>
+<li>Messages distribution depends on exchange type</li>
+</ul>
+</li>
+</ul>
+<h2 id="OpenStack-and-RabbitMQ"><a href="#OpenStack-and-RabbitMQ" class="headerlink" title="OpenStack and RabbitMQ"></a>OpenStack and RabbitMQ</h2><ul>
+<li>OpenStack uses a message queue to coordinate operations and status information among services (像openstack的神經)</li>
+<li><strong>非同步</strong>的傳訊息方式</li>
+<li>再傳Messages時，直接丟到exchange中就不理他，在大系統的時候不用像同步系統會有互相等process完成才能繼續執行</li>
+</ul>
+<h1 id="An-agent-less-approach-to-application-level-dependency-map-discovery-using-virtual-machine-inspection-APM-MQ"><a href="#An-agent-less-approach-to-application-level-dependency-map-discovery-using-virtual-machine-inspection-APM-MQ" class="headerlink" title="An agent-less approach to application-level dependency map discovery using virtual machine inspection (APM-MQ)"></a>An agent-less approach to application-level dependency map discovery using virtual machine inspection (APM-MQ)</h1><ul>
+<li><p>Application dependency mapping (ADM) creates relationships between interdependent applications.(ex: database and web application)</p>
+</li>
+<li><p>The ADT prototype proposes a method to generate accurate application dependency map by intercepting(攔截) VM execution and introspecting(自省) VM state.</p>
+</li>
+<li><p>Why we need a distributed application’s performance management system? -&gt; single node’s performance problem in a distributed system would affect whole distributed system’s QoS.</p>
+</li>
+<li><p>Too many Divices, NFV, virtual data center(VDC) dirve the ADT</p>
+</li>
+<li><p>Dependency mapping system arise, since SW problem is harder to dectact than HW problem.<br><img src="https://i.imgur.com/QUTTa0g.png"></p>
+</li>
+</ul>
+<h2 id="Existing-Technology"><a href="#Existing-Technology" class="headerlink" title="Existing Technology"></a>Existing Technology</h2><ul>
+<li>Install daemon on machine background process to collect inter-machine TCP traffic log and generate inter-machine dependency (can only generate <strong>static</strong> DM)</li>
+</ul>
+<h2 id="Socket-Based-Application"><a href="#Socket-Based-Application" class="headerlink" title="Socket Based Application"></a>Socket Based Application</h2><ol>
+<li>Intercept guest OS’s at packet sending system call</li>
+<li>Perform VM introspection to get running thread and TCP connection information. Send this traffic log to server</li>
+<li>Convert thread based traffic log into inter-thread traffic log in APM (Application Performance Management) server</li>
+<li>Generate accurate application dependency map from inter-thread traffic logs</li>
+</ol>
+<ul>
+<li>Thread level execution</li>
+<li>VM introspection help interception at system call enables quick detection and deployment of changes in the machine</li>
+<li>Multi-process or multi-thread server and the prototype also produces the <strong>trajectory</strong> along with an accurate ADM<br><img src="https://i.imgur.com/RT93Hvf.png"></li>
+</ul>
+<h2 id="Approach-for-Message-Based-Application"><a href="#Approach-for-Message-Based-Application" class="headerlink" title="Approach for Message Based Application:"></a>Approach for Message Based Application:</h2><ul>
+<li><p>The software architecture of enterprise service bus is widely used and its underlined message passing mechanism is message queue</p>
+</li>
+<li><p>Problem in application discovery of queue based application:<br><img src="https://i.imgur.com/021Ubjp.png"></p>
+</li>
+<li><p>Advantages of using checksum approach</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Intern/" rel="tag"><i class="fa fa-tag"></i> Intern</a>
+              <a href="/tags/APM/" rel="tag"><i class="fa fa-tag"></i> APM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/08/31/5G-Privacy/" rel="prev" title="5G Privacy Security">
+      <i class="fa fa-chevron-left"></i> 5G Privacy Security
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/31/APM-Deployment/" rel="next" title="APM-Deployment">
+      APM-Deployment <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenStack-RabbitMQ-Deep-Dive-for-Integration-and-Monitoring"><span class="nav-number">1.</span> <span class="nav-text">OpenStack RabbitMQ Deep Dive for Integration and Monitoring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-RabbitMQ"><span class="nav-number">1.1.</span> <span class="nav-text">What is RabbitMQ ?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ"><span class="nav-number">1.1.1.</span> <span class="nav-text">RabbitMQ</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenStack-and-RabbitMQ"><span class="nav-number">1.2.</span> <span class="nav-text">OpenStack and RabbitMQ</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#An-agent-less-approach-to-application-level-dependency-map-discovery-using-virtual-machine-inspection-APM-MQ"><span class="nav-number">2.</span> <span class="nav-text">An agent-less approach to application-level dependency map discovery using virtual machine inspection (APM-MQ)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Existing-Technology"><span class="nav-number">2.1.</span> <span class="nav-text">Existing Technology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket-Based-Application"><span class="nav-number">2.2.</span> <span class="nav-text">Socket Based Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Approach-for-Message-Based-Application"><span class="nav-number">2.3.</span> <span class="nav-text">Approach for Message Based Application:</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Harry Hong"
+      src="/uploads/3_cut.png">
+  <p class="site-author-name" itemprop="name">Harry Hong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/h123a456rr789y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;h123a456rr789y" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/harry.hong.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;harry.hong.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/harry_hong_hh1025/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;harry_hong_hh1025&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/li-yu-hong-52390815b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;li-yu-hong-52390815b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

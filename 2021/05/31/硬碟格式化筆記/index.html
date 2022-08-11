@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png">
+  <link rel="mask-icon" href="/images/profile_256x256.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"h123a456rr789y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="介紹各種類型的硬碟格式化，以及不同的格式優缺點">
+<meta property="og:type" content="article">
+<meta property="og:title" content="硬碟格式化筆記">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2021/05/31/%E7%A1%AC%E7%A2%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AD%86%E8%A8%98/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="介紹各種類型的硬碟格式化，以及不同的格式優缺點">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/ZC0WADJ.png">
+<meta property="article:published_time" content="2021-05-31T12:04:46.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
+<meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="Technology">
+<meta property="article:tag" content="Computer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/ZC0WADJ.png">
+
+<link rel="canonical" href="https://h123a456rr789y.github.io/2021/05/31/%E7%A1%AC%E7%A2%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AD%86%E8%A8%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>硬碟格式化筆記 | Harry's Stories</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Harry's Stories" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Harry's Stories</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Adventurer</p>
+      <a>
+        <img class="custom-logo-image" src="/images/cover_2.png" alt="Harry's Stories">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>photos</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2021/05/31/%E7%A1%AC%E7%A2%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AD%86%E8%A8%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          硬碟格式化筆記
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-31 20:04:46" itemprop="dateCreated datePublished" datetime="2021-05-31T20:04:46+08:00">2021-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
+              </span>
+
+          
+            <div class="post-description">介紹各種類型的硬碟格式化，以及不同的格式優缺點</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="硬碟格式化筆記"><a href="#硬碟格式化筆記" class="headerlink" title="硬碟格式化筆記"></a>硬碟格式化筆記</h1><h2 id="什麼是格式化"><a href="#什麼是格式化" class="headerlink" title="什麼是格式化"></a>什麼是格式化</h2><p>格式化是對儲存裝置所選的分割區(Partition) 給予一全新空白「根目錄Root」，創建出一個『歸檔系統』，就如同規劃一本書的「目錄索引」，可以組織儲存裝置內的資料檔案，並能更有效利用儲存空間，存放更多檔案；格式化也等同於清除儲存裝置內所有格式、檔案</p>
+<h2 id="格式化分類"><a href="#格式化分類" class="headerlink" title="格式化分類"></a>格式化分類</h2><h3 id="低階格式化"><a href="#低階格式化" class="headerlink" title="低階格式化"></a>低階格式化</h3><ul>
+<li>電腦儲存檔案資料都是由二進位的「0和1」所組成。如果將USB隨身碟低階格式化，原先USB隨身碟內所儲&#x2F;home&#x2F;harry&#x2F;Desktop&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;硬碟格式化筆記.md存的資料將會被完全刪除，USB隨身碟內的資料都重置為「0」，就是原場USB的設定</li>
+<li>無法救援</li>
+<li>可以用來救援損壞 故障或無法辨識</li>
+</ul>
+<h3 id="高階格式化"><a href="#高階格式化" class="headerlink" title="高階格式化"></a>高階格式化</h3><p>分為兩類，並為Window中格式化的兩個選項</p>
+<ul>
+<li>快速格式化(快)<ul>
+<li>不會檢查損壞區</li>
+</ul>
+</li>
+<li>完整格式化(慢)<ul>
+<li>會檢查損壞區</li>
+</ul>
+</li>
+</ul>
+<p>雖然檔案都看似清空可是仍可救援</p>
+<h2 id="FAT32、NTFS、exFAT的檔案格式差別為何，該如何選擇？"><a href="#FAT32、NTFS、exFAT的檔案格式差別為何，該如何選擇？" class="headerlink" title="FAT32、NTFS、exFAT的檔案格式差別為何，該如何選擇？"></a>FAT32、NTFS、exFAT的檔案格式差別為何，該如何選擇？</h2><p>首先，要先知道不同的讀取檔案格式，可能會影響單存取一檔案大小，空間使用效率，還有不同系統的相容性，以下速度為單次檔案讀寫速度</p>
+<h3 id="FAT32"><a href="#FAT32" class="headerlink" title="FAT32"></a>FAT32</h3><ul>
+<li>為最早期最通用的檔案格式</li>
+<li>相容性(優):通用於不同的系統（Windows, linux, MacOS）</li>
+<li>速度(慢):一次只能讀寫一個最大 4 GB檔案，分割區Partition最大分區為8TB</li>
+<li>使用:可以用於跨平台間小檔案得傳輸</li>
+</ul>
+<h3 id="NTFS"><a href="#NTFS" class="headerlink" title="NTFS"></a>NTFS</h3><ul>
+<li>NTFS是在FAT32之後出現的檔案系統格式，是Windows主要使用的檔案格式</li>
+<li>相容性(差):用於所有版本的Windows，在一般情況下Mac OS只能讀取檔案，而在一些Linux發行版系統中也只能讀取</li>
+<li>速度(快):NTFS單次讀取&#x2F;寫入檔案文件容量以及傳輸速度為 16TB（理論值）</li>
+<li>使用: 主要在 Windows 上儲存高畫質影片、照片圖檔等大容量檔案需求者</li>
+</ul>
+<h3 id="exFAT"><a href="#exFAT" class="headerlink" title="exFAT"></a>exFAT</h3><ul>
+<li>exFAT是在FAT之後開發優化快閃記憶體的檔案系統</li>
+<li>相容性(中):基本上與所有版本的Windows和現代版本的Mac OS 讀寫兼容，在Linux上需要其他軟體輔助。</li>
+<li>速度(中): exFAT在檔案文件單次讀取&#x2F;寫入容量以及傳輸速度為64ZB</li>
+<li>使用: 在Windows 和 MacOS 之間遊走的人，且需要比較好傳輸效率的人</li>
+</ul>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>如使用的作業系統是 Windows，NTFS是最理想的選擇，但如果如果要跨平作業系統的話，會考慮相容性較佳的exFAT和 FAT32，在透過使用OS和存取速度下去做選擇，因為在linux上安裝讀取exFAT需要額外安裝東西相較麻煩會建議FAT32(速度較慢)，但是如果只有用MacOS的話會建議exFAT(速度較快)</p>
+<ul>
+<li>但如果USB隨身碟要當開機碟建議可以使用FAT32，這樣對於引導系統啟動的相容性會好一些<br><img src="https://i.imgur.com/ZC0WADJ.png"></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Technology/" rel="tag"><i class="fa fa-tag"></i> Technology</a>
+              <a href="/tags/Computer/" rel="tag"><i class="fa fa-tag"></i> Computer</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/25/Online-Camera-LiDAR-Fusion-and-Object-Detection-on-Hybrid-Data-for-Autonomous-Driving/" rel="prev" title="Online Camera LiDAR Fusion and Object Detection on Hybrid Data for Autonomous Driving">
+      <i class="fa fa-chevron-left"></i> Online Camera LiDAR Fusion and Object Detection on Hybrid Data for Autonomous Driving
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/31/Openpose-Intallation-on-Ubuntu-18-04/" rel="next" title="Openpose Intallation on Ubuntu 18.04">
+      Openpose Intallation on Ubuntu 18.04 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A1%AC%E7%A2%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AD%86%E8%A8%98"><span class="nav-number">1.</span> <span class="nav-text">硬碟格式化筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">什麼是格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E9%A1%9E"><span class="nav-number">1.2.</span> <span class="nav-text">格式化分類</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8E%E9%9A%8E%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">1.2.1.</span> <span class="nav-text">低階格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%9A%8E%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">高階格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAT32%E3%80%81NTFS%E3%80%81exFAT%E7%9A%84%E6%AA%94%E6%A1%88%E6%A0%BC%E5%BC%8F%E5%B7%AE%E5%88%A5%E7%82%BA%E4%BD%95%EF%BC%8C%E8%A9%B2%E5%A6%82%E4%BD%95%E9%81%B8%E6%93%87%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">FAT32、NTFS、exFAT的檔案格式差別為何，該如何選擇？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FAT32"><span class="nav-number">1.3.1.</span> <span class="nav-text">FAT32</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTFS"><span class="nav-number">1.3.2.</span> <span class="nav-text">NTFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exFAT"><span class="nav-number">1.3.3.</span> <span class="nav-text">exFAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">1.3.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Harry Hong"
+      src="/uploads/3_cut.png">
+  <p class="site-author-name" itemprop="name">Harry Hong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/h123a456rr789y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;h123a456rr789y" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/harry.hong.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;harry.hong.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/harry_hong_hh1025/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;harry_hong_hh1025&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/li-yu-hong-52390815b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;li-yu-hong-52390815b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

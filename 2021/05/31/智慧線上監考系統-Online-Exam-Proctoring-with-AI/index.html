@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/profile_180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/profile_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/profile_16x16.png">
+  <link rel="mask-icon" href="/images/profile_256x256.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"h123a456rr789y.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="介紹智慧線上監考系統，在現在疫情的情況下，所以有的實體考試都被取消掉了，沒有人監考嘛？ 如果人工智慧幫你監考你覺的如何呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智慧線上監考系統 Online Exam Proctoring with AI">
+<meta property="og:url" content="https://h123a456rr789y.github.io/2021/05/31/%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1-Online-Exam-Proctoring-with-AI/index.html">
+<meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="介紹智慧線上監考系統，在現在疫情的情況下，所以有的實體考試都被取消掉了，沒有人監考嘛？ 如果人工智慧幫你監考你覺的如何呢？">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/4rotLYS.png">
+<meta property="og:image" content="https://i.imgur.com/RvXnQi1.png">
+<meta property="og:image" content="https://i.imgur.com/eJ5g9rT.png">
+<meta property="og:image" content="https://i.imgur.com/Z1PFEfN.png">
+<meta property="og:image" content="https://i.imgur.com/XH5Frql.png">
+<meta property="article:published_time" content="2021-05-31T15:25:46.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
+<meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="Technology">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/4rotLYS.png">
+
+<link rel="canonical" href="https://h123a456rr789y.github.io/2021/05/31/%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1-Online-Exam-Proctoring-with-AI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>智慧線上監考系統 Online Exam Proctoring with AI | Harry's Stories</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Harry's Stories" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Harry's Stories</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Adventurer</p>
+      <a>
+        <img class="custom-logo-image" src="/images/cover_2.png" alt="Harry's Stories">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>photos</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2021/05/31/%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1-Online-Exam-Proctoring-with-AI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/3_cut.png">
+      <meta itemprop="name" content="Harry Hong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harry's Stories">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          智慧線上監考系統 Online Exam Proctoring with AI
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-31 23:25:46" itemprop="dateCreated datePublished" datetime="2021-05-31T23:25:46+08:00">2021-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
+              </span>
+
+          
+            <div class="post-description">介紹智慧線上監考系統，在現在疫情的情況下，所以有的實體考試都被取消掉了，沒有人監考嘛？ 如果人工智慧幫你監考你覺的如何呢？</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="智慧線上監考系統-Online-Exam-Proctoring-with-AI"><a href="#智慧線上監考系統-Online-Exam-Proctoring-with-AI" class="headerlink" title="智慧線上監考系統 Online Exam Proctoring with AI"></a>智慧線上監考系統 Online Exam Proctoring with AI</h1><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>智慧線上監考系統就是一個讓遠方有人可以監考你考試確保考生考試沒有作弊的一個機制</p>
+<p><img src="https://i.imgur.com/4rotLYS.png"></p>
+<ul>
+<li>Photo by Rachel Sender</li>
+</ul>
+<p>其實它早就存在約10年左右，一開始，他是使用最簡單的方式只建造一個網路的平台讓監考者可以遠端來看受試者考試，所以純脆只是提供一個平台（由真人監控），後來隨著機器學習還有深度學習方法不斷的演進，一些AI的方法逐漸用來協助判斷是否學生有不正常的動作和作弊的嫌疑（由AI系統監控），此外，因為電腦視覺和聲音識別的技術不斷進步，在偵測學生的的影像和聲音的資訊上有了更好的突破，如果能好好結合兩種不同的監控方法，想必可以給遠距考試更好的監考公平性。</p>
+<p>線上監考系統可以被拿來用在當時題考試沒辦法進行的時候，而且它不僅可以支援線上的考試，也可以支援錄製後的考試，對於跨國的考試來說，錄製的考試會是相對於方便，而線上的考試也可以及時監控考試的狀況，所以不論是空間上或是時間上都給予考試多很大的彈性空間。</p>
+<p>這些系統像是Pearson, ProctorU, Eklavvya, Zoom 等公司有相關的產品，並且很多已經在歐美廣泛的被使用來做遠端考試的監測，但是此行業還是相對算初期，還有很長的路可以走。</p>
+<h1 id="線上智慧監考是如何進行的呢？"><a href="#線上智慧監考是如何進行的呢？" class="headerlink" title="線上智慧監考是如何進行的呢？"></a>線上智慧監考是如何進行的呢？</h1><p><img src="https://i.imgur.com/RvXnQi1.png"></p>
+<p>首先，受試者會先遠端登入到一個安全的網路瀏覽器平台，並且用身份證ID認證受試者的身份，之後就會進行線上的考試，線上的考試會需要存取你電腦的相機還有麥克風，好讓它可以拿到你影像還有聲音的資訊來監考，接著則是會將這些所有的監考資料傳到遠端的伺服器上面進行偵測還有分析的功能，最後在以直播遠端或者是處理後的資料＋影像傳給監考者來看，或者是完全用AI程式系統來判定。</p>
+<h1 id="線上智慧監考跟AI到底有什麼關聯呢？"><a href="#線上智慧監考跟AI到底有什麼關聯呢？" class="headerlink" title="線上智慧監考跟AI到底有什麼關聯呢？"></a>線上智慧監考跟AI到底有什麼關聯呢？</h1><p><img src="https://i.imgur.com/eJ5g9rT.png"><br>它可能涵蓋的任務包含了電腦視覺，像是人臉辨識和多人偵測，此外也提供了偵測可疑物品像是手機或者是平板等考試違禁品和視線追蹤看受試者有沒有亂看其他東西的嫌疑。在語音上面，則是可以偵測是否有其他人在說話在暗中來幫助受試者考試。在電腦的權限允許下，我們也可以對受試者在電腦上的行為來進行分析，像是受試者是否有打開多個網頁或有google查資料的嫌疑，又或者是否有大量複製貼上的嫌疑，也可透過觀察受試者打字的習慣還有韻律來判斷是否是正常或者是有很大的反差。</p>
+<h1 id="相關研究"><a href="#相關研究" class="headerlink" title="相關研究"></a>相關研究</h1><h2 id="Automated-Online-Exam-Proctoring"><a href="#Automated-Online-Exam-Proctoring" class="headerlink" title="Automated Online Exam Proctoring"></a><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/7828141">Automated Online Exam Proctoring</a></h2><p><img src="https://i.imgur.com/Z1PFEfN.png"><br>這個研究算是最早提出來結合傳統演算來得取得特徵在用機器學習的模型來訓練出一個可以用來分類預測的一個模型，在倫文中有提到如何翠取出像是文字辨識（Text Detection,）語音辨識（Speech Detection）,視線預測（Gaze Estimation）,手機偵測（Phone Detection）,使用者認證（User Verification）,執行中視窗偵測（Active Window Detection）等計算的方式，雖然有些方法相對陽春，但是卻是為這個人工智慧監考系統創下了一個好的基底的一篇論文，可以想到的是肯定有很多其他的分析特徵的方式和做分類的模型可以被拿來用來這個系統上，可是因為大部分現有的軟體幾乎都是商業開發的，所以很都細節的方法都沒有被公開出來。</p>
+<h2 id="Online-Student-Authentication-and-Proctoring-System-Based-on-Multimodal-Biometrics-Technology"><a href="#Online-Student-Authentication-and-Proctoring-System-Based-on-Multimodal-Biometrics-Technology" class="headerlink" title="Online Student Authentication and Proctoring System Based on Multimodal Biometrics Technology"></a><a target="_blank" rel="noopener" href="https://www.google.com/url?q=https://ieeexplore.ieee.org/abstract/document/9427463&sa=D&source=editors&ust=1622470875162000&usg=AOvVaw3onl4dWLyS2FKRgjDNazMu">Online Student Authentication and Proctoring System Based on Multimodal Biometrics Technology</a></h2><p><img src="https://i.imgur.com/XH5Frql.png"><br>在此篇論文它提出了一個更新（2021年五月）更完整的架構來做線上智慧間考得系統，首先也是讓學生先連上軟體，並且在伺服器端會有一個獨立的軟體供給學生考生安裝並且同時有一個網路的軟體來蒐集學生的影像還有聲音等資訊，接著丟給運算中心（Processing Core）像是影像處裡，音訊處裡，和打字偵測，使用者認證等工作，最後在將所有的結果傳給考試單位。</p>
+<h1 id="智慧線上監考系統真的可以有效的偵測出作弊嘛？"><a href="#智慧線上監考系統真的可以有效的偵測出作弊嘛？" class="headerlink" title="智慧線上監考系統真的可以有效的偵測出作弊嘛？"></a>智慧線上監考系統真的可以有效的偵測出作弊嘛？</h1><p>事實上很多公司都宣稱說他們的系統相較正常的考試來說可以更好的偵測出學生有沒有作弊，這可能是對的但是我其實是相當的懷疑，因為大部分的系統都沒有提供出有公信力的數據來展示出他們的效果，此外學生作弊這件事情也是非常難來量化的。但是就我看來這些結合AI的系統可以有效的輔助助教或者是考官監測學生考試時候的狀況，除了遠距的因素之外，其實很多課堂也會有因為學生人數過多（100, 200人以上的課），都會使監控考試的難度增加，所以這個監測系統其實更主要的是一個協助或者是使作弊難度更高的一的輔助系統。</p>
+<h1 id="智慧線上監考系統的議題？"><a href="#智慧線上監考系統的議題？" class="headerlink" title="智慧線上監考系統的議題？"></a>智慧線上監考系統的議題？</h1><p>因為有很多資料會被這些系統的廠商蒐集，像是考試時的影像和聲音,考試的習慣的資料甚至是考試者個身份都會被蒐集，這些資料如果被有心人士拿去操控，可能會造成個人隱私上面的問題。<br>也有研究指出，很多做這種智慧線上監考的人會在考試的時候更緊張，並且有不太好的表現，事實上，這更是一個有關心裡層面的問題，因為受試者是感受到真實被一個人或者是一個機器看你來考試的感覺，某方面來講也可能帶給讓考生更不自在的因素以及原因，也可以從它們考試中被觀察出來。<br>當然有規則，就有那些喜歡破壞規則的人，因為系統肯定會有一些漏洞存在，所以很多人可能會試著去挑戰，要怎麼在系統的監控下作弊，在網路上甚至有些人會分享它們如何在這種環境下作弊的經歷和作弊的技巧，當然我並不鼓勵大家去作弊，但是我相信如果有更多這樣的漏洞被發現，就像是資安的攻防戰，如果知道怎麼攻擊，就能更有效的去防禦。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>其實智慧線上監考系統並不會使考試的品質更好，它更多的是讓作弊的難度增加，並且保持考試的公平性，當然因為現在AI的技術一直在不斷的進步，這些數據會如何有效的被運用並且偵測出作弊的行為將會是未來的趨勢，我想在未來，我們可能都要慢慢開始來適應這樣新的考試型態，並且學會與AI科技的技術共存。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Technology/" rel="tag"><i class="fa fa-tag"></i> Technology</a>
+              <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i> AI</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/31/Openpose-Intallation-on-Ubuntu-18-04/" rel="prev" title="Openpose Intallation on Ubuntu 18.04">
+      <i class="fa fa-chevron-left"></i> Openpose Intallation on Ubuntu 18.04
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1-Online-Exam-Proctoring-with-AI"><span class="nav-number">1.</span> <span class="nav-text">智慧線上監考系統 Online Exam Proctoring with AI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%9A%E4%B8%8A%E6%99%BA%E6%85%A7%E7%9B%A3%E8%80%83%E6%98%AF%E5%A6%82%E4%BD%95%E9%80%B2%E8%A1%8C%E7%9A%84%E5%91%A2%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">線上智慧監考是如何進行的呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%9A%E4%B8%8A%E6%99%BA%E6%85%A7%E7%9B%A3%E8%80%83%E8%B7%9FAI%E5%88%B0%E5%BA%95%E6%9C%89%E4%BB%80%E9%BA%BC%E9%97%9C%E8%81%AF%E5%91%A2%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">線上智慧監考跟AI到底有什麼關聯呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E7%A0%94%E7%A9%B6"><span class="nav-number">5.</span> <span class="nav-text">相關研究</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Automated-Online-Exam-Proctoring"><span class="nav-number">5.1.</span> <span class="nav-text">Automated Online Exam Proctoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Online-Student-Authentication-and-Proctoring-System-Based-on-Multimodal-Biometrics-Technology"><span class="nav-number">5.2.</span> <span class="nav-text">Online Student Authentication and Proctoring System Based on Multimodal Biometrics Technology</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1%E7%9C%9F%E7%9A%84%E5%8F%AF%E4%BB%A5%E6%9C%89%E6%95%88%E7%9A%84%E5%81%B5%E6%B8%AC%E5%87%BA%E4%BD%9C%E5%BC%8A%E5%98%9B%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">智慧線上監考系統真的可以有效的偵測出作弊嘛？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1%E7%9A%84%E8%AD%B0%E9%A1%8C%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">智慧線上監考系統的議題？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">8.</span> <span class="nav-text">結論</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Harry Hong"
+      src="/uploads/3_cut.png">
+  <p class="site-author-name" itemprop="name">Harry Hong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/h123a456rr789y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;h123a456rr789y" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/harry.hong.7" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;harry.hong.7" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/harry_hong_hh1025/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;harry_hong_hh1025&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/li-yu-hong-52390815b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;li-yu-hong-52390815b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harry Hong</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
