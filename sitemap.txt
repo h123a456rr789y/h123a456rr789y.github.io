@@ -1,6 +1,7 @@
+https://h123a456rr789y.github.io/about/index.html
+https://h123a456rr789y.github.io/photos/index.html
 https://h123a456rr789y.github.io/categories/index.html
 https://h123a456rr789y.github.io/photos/photoslist.json
-https://h123a456rr789y.github.io/photos/index.html
 https://h123a456rr789y.github.io/tags/index.html
 https://h123a456rr789y.github.io/2021/03/24/3D%E6%84%9F%E6%B8%AC%E6%8A%80%E8%A1%93/
 https://h123a456rr789y.github.io/2019/08/31/5G-Privacy/
@@ -37,7 +38,6 @@ https://h123a456rr789y.github.io/2020/04/28/passiv/
 https://h123a456rr789y.github.io/2021/05/31/%E6%99%BA%E6%85%A7%E7%B7%9A%E4%B8%8A%E7%9B%A3%E8%80%83%E7%B3%BB%E7%B5%B1-Online-Exam-Proctoring-with-AI/
 https://h123a456rr789y.github.io/2020/04/06/git/
 https://h123a456rr789y.github.io/2021/05/31/%E7%A1%AC%E7%A2%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AD%86%E8%A8%98/
-https://h123a456rr789y.github.io/about/index.html
 https://h123a456rr789y.github.io/
 https://h123a456rr789y.github.io/tags/Technology/
 https://h123a456rr789y.github.io/tags/Intern/
