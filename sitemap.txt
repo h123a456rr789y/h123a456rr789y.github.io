@@ -1,5 +1,5 @@
-https://h123a456rr789y.github.io/photos/index.html
 https://h123a456rr789y.github.io/about/index.html
+https://h123a456rr789y.github.io/photos/index.html
 https://h123a456rr789y.github.io/categories/index.html
 https://h123a456rr789y.github.io/photos/photoslist.json
 https://h123a456rr789y.github.io/tags/index.html
