@@ -234,14 +234,8 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="Recompile-Kernel-on-Linux"><a href="#Recompile-Kernel-on-Linux" class="headerlink" title="Recompile Kernel on Linux"></a>Recompile Kernel on Linux</h1><h2 id="Prerequisite-of-Building-the-Kernel"><a href="#Prerequisite-of-Building-the-Kernel" class="headerlink" title="Prerequisite of Building the Kernel"></a>Prerequisite of Building the Kernel</h2><ul>
-<li><pre><code>Check gcc is installed 
-</code></pre>
-<ul>
-<li><pre><code>Tools needed:
-</code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libncurses5-dev xz-utils libssl-dev kernel-package wget</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<li>   Check gcc is installed </li>
+<li>   Tools needed:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential libncurses5-dev xz-utils libssl-dev kernel-package wget</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="Step1-0-到-Kernel-org-下載需要的版本"><a href="#Step1-0-到-Kernel-org-下載需要的版本" class="headerlink" title="Step1.0 :到 Kernel.org 下載需要的版本"></a>Step1.0 :到 Kernel.org 下載需要的版本</h2><ul>
 <li>用 git clone 或 wget 下載原始碼 並丟到 &#x2F;usr&#x2F;src 的資料夾下<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/torvalds/linux/archive/v4.x/linux-4.15.tar.gz </span><br><span class="line">tar zxvf linux-4.15.tar.gz</span><br><span class="line">cd linux-4.15/</span><br></pre></td></tr></table></figure></li>
