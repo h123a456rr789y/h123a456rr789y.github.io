@@ -21,32 +21,36 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"h123a456rr789y.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Introduction to service and configuration setting in FreeBSD">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Service and Setting">
-<meta property="og:url" content="https://h123a456rr789y.github.io/2020/04/06/Service-and-Setting/index.html">
+    <meta name="description" content="Introduction to user management in FreeBSD and Linux">
+<meta property="og:type" content="website">
+<meta property="og:title" content="User Management">
+<meta property="og:url" content="https://h123a456rr789y.github.io/backup/User-Management.html">
 <meta property="og:site_name" content="Harry&#39;s Stories">
-<meta property="og:description" content="Introduction to service and configuration setting in FreeBSD">
+<meta property="og:description" content="Introduction to user management in FreeBSD and Linux">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.imgur.com/9iqnCtb.png">
-<meta property="og:image" content="https://i.imgur.com/vvoJIS4.png">
-<meta property="og:image" content="https://i.imgur.com/LVTVgCs.png">
-<meta property="article:published_time" content="2020-04-06T13:26:13.000Z">
+<meta property="og:image" content="https://i.imgur.com/5OxtuSc.png">
+<meta property="og:image" content="https://i.imgur.com/dI6qwcE.png">
+<meta property="og:image" content="https://i.imgur.com/cgSW3qc.png">
+<meta property="og:image" content="https://i.imgur.com/Rlx1iUM.png">
+<meta property="og:image" content="https://i.imgur.com/qLL4TTS.png">
+<meta property="og:image" content="https://i.imgur.com/i3B0Cxn.png">
+<meta property="article:published_time" content="2020-04-06T10:08:37.000Z">
 <meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
 <meta property="article:author" content="Harry Hong">
 <meta property="article:tag" content="SA Note">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/9iqnCtb.png">
+<meta name="twitter:image" content="https://i.imgur.com/5OxtuSc.png">
 
 
-<link rel="canonical" href="https://h123a456rr789y.github.io/2020/04/06/Service-and-Setting/">
+<link rel="canonical" href="https://h123a456rr789y.github.io/backup/User-Management">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://h123a456rr789y.github.io/2020/04/06/Service-and-Setting/","path":"2020/04/06/Service-and-Setting/","title":"Service and Setting"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://h123a456rr789y.github.io/backup/User-Management.html","path":"backup/User-Management.html","title":"User Management"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Service and Setting | Harry's Stories</title>
+<title>User Management | Harry's Stories
+</title>
   
 
 
@@ -121,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Services-amp-Settings"><span class="nav-number">1.</span> <span class="nav-text">Services &amp; Settings</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Services"><span class="nav-number">1.1.</span> <span class="nav-text">Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RC-Script"><span class="nav-number">1.2.</span> <span class="nav-text">RC Script</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-New-Users"><span class="nav-number">1.</span> <span class="nav-text">Adding New Users</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ID"><span class="nav-number">1.1.</span> <span class="nav-text">ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps-to-add-new-user"><span class="nav-number">1.2.</span> <span class="nav-text">Steps to add new user</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#password-and-group-file"><span class="nav-number">1.3.</span> <span class="nav-text">password and group file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-accounts"><span class="nav-number">1.4.</span> <span class="nav-text">Remove accounts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rootly-Powers"><span class="nav-number">2.</span> <span class="nav-text">Rootly Powers</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -136,13 +140,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -175,229 +179,155 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner page posts-expand">
 
 
-  
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
 
+<h1 class="post-title" itemprop="name headline">User Management
+</h1>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://h123a456rr789y.github.io/2020/04/06/Service-and-Setting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/3_cut.png">
-      <meta itemprop="name" content="Harry Hong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harry's Stories">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Service and Setting | Harry's Stories">
-      <meta itemprop="description" content="Introduction to service and configuration setting in FreeBSD">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Service and Setting
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-04-06 21:26:13" itemprop="dateCreated datePublished" datetime="2020-04-06T21:26:13+08:00">2020-04-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-11 18:03:00" itemprop="dateModified" datetime="2022-08-11T18:03:00+08:00">2022-08-11</time>
-    </span>
-
-  
+<div class="post-meta-container">
+    <div class="post-description">Introduction to user management in FreeBSD and Linux</div>
 </div>
 
-            <div class="post-description">Introduction to service and configuration setting in FreeBSD</div>
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><h1 id="Services-amp-Settings"><a href="#Services-amp-Settings" class="headerlink" title="Services &amp; Settings"></a>Services &amp; Settings</h1><h2 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h2><ul>
-<li>Commen Flow of Runing a Service <ol>
-<li>Installation:<ul>
-<li>Through ports, packages, or source tarballs<ul>
-<li><code>pkg install kde4</code></li>
+      
+      
+      <div class="post-body">
+          <p>#User Management</p>
+<h2 id="Adding-New-Users"><a href="#Adding-New-Users" class="headerlink" title="Adding New Users"></a>Adding New Users</h2><h3 id="ID"><a href="#ID" class="headerlink" title="ID"></a>ID</h3><ul>
+<li>User ID, Group ID<br><img src="https://i.imgur.com/5OxtuSc.png"></li>
+<li>Root<br><img src="https://i.imgur.com/dI6qwcE.png"></li>
+<li>Other Important Users<ul>
+<li>daemon: owner of unprivileged software</li>
+<li>bin: owner of system commands</li>
+<li>sys: owner of the kernel and memory images</li>
+<li>nobody: owner of nothing</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>Configuration<ul>
-<li>Update &#x2F;etc&#x2F;rc.conf<ul>
-<li><code>kdm4_enable=&quot;YES”</code></li>
-</ul>
-</li>
-<li>service kdm4 enable</li>
-</ul>
-</li>
-<li>Start<ul>
-<li>rc.d&#x2F;*<ul>
-<li>&#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;kdm4 start</li>
-</ul>
-</li>
-<li>service kdm4 start</li>
-</ul>
-</li>
-<li>Maintenance<ul>
-<li>Updating and Restarting</li>
-</ul>
-</li>
+<h3 id="Steps-to-add-new-user"><a href="#Steps-to-add-new-user" class="headerlink" title="Steps to add new user"></a>Steps to add new user</h3><ol>
+<li>Edit the password and group files -&gt;<code>vipw, pw</code></li>
+<li>Set an initial password -&gt;<code>password harry</code></li>
+<li>Set quota -&gt;<code>edquota harry</code></li>
+<li>Create user home directory -&gt;<code>mkdir /home/harry</code></li>
+<li>Copy startup files to user’s home (optional)</li>
+<li>Set the file&#x2F;directory owner to the user -&gt;<code>chown -R harry:dcs /home/harry</code></li>
 </ol>
-</li>
-<li>Configuration File<ul>
-<li>Local installed programs’ configuration files are located under &#x2F;usr&#x2F;local&#x2F;etc<ul>
-<li>Daemon → program-name.conf<ul>
-<li>pure-ftpd.conf</li>
+<h3 id="password-and-group-file"><a href="#password-and-group-file" class="headerlink" title="password and group file"></a>password and group file</h3><ul>
+<li>&#x2F;etc&#x2F;passwd<ul>
+<li>Store user information:<ul>
+<li>Login name</li>
+<li>Encrypted password (* or x)</li>
+<li>UID</li>
+<li>Default GID</li>
+<li>GECOS information<ul>
+<li>Full name, office, extension, home phone</li>
 </ul>
 </li>
-<li>user-program → program-name<strong>rc</strong><ul>
-<li>vimrc</li>
-<li>screenrc</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Default config file usually installed with .sample or .default suffix<ul>
-<li>copy and rename before use it</li>
+<li>Home directory</li>
+<li>Login shell</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>A program with multiple config files are usually located in &#x2F;usr&#x2F;local&#x2F;etc&#x2F;program-name&#x2F; in a directory <ul>
-<li>apache*</li>
+</ul>
+<p><img src="https://i.imgur.com/cgSW3qc.png"></p>
+<ul>
+<li><p>Encrypted password</p>
+<ul>
+<li>The encrypted password is stored in shadow file for security reason</li>
+<li>&#x2F;etc&#x2F;master.passwd (BSD)</li>
+<li>&#x2F;etc&#x2F;shadow (Linux)<br><img src="https://i.imgur.com/Rlx1iUM.png"></li>
+</ul>
+</li>
+<li><p>&#x2F;etc&#x2F;group</p>
+<ul>
+<li>Contains the names of UNIX groups and a list of each group’s member:</li>
+<li>Group name</li>
+<li>Encrypted password</li>
+<li>GID</li>
+<li>Only in wheel group can do “su” command<br><img src="https://i.imgur.com/qLL4TTS.png"></li>
+</ul>
+</li>
+<li><p>In FreeBSD</p>
+<ul>
+<li>Use “vipw” to edit &#x2F;etc&#x2F;master.passwd</li>
+</ul>
+</li>
+<li><p>In Linux</p>
+<ul>
+<li>Edit &#x2F;etc&#x2F;passwd and then</li>
+<li>Use “pwconv” to transfer into &#x2F;etc&#x2F;shadow</li>
 </ul>
 </li>
 </ul>
-<h2 id="RC-Script"><a href="#RC-Script" class="headerlink" title="RC Script"></a>RC Script</h2><ul>
-<li>Scripts for starting &#x2F; stopping a service</li>
-<li>Command scripts for auto-reboot and daemon startup</li>
-<li>Start services on system startup</li>
-<li>Starting and Stopping services in a standard way<ul>
-<li>Without rc:<ul>
-<li><code>usr/local/sbin/pure-ftpd -g /var/run/pure-ftpd.pid -A -c50 -B -C8 -D -fftp -H -I15 -lpam -lunix -L10000:8 -m4 -s -U133:022 -u100 -k99 -Z</code></li>
+<h3 id="Remove-accounts"><a href="#Remove-accounts" class="headerlink" title="Remove accounts"></a>Remove accounts</h3><ul>
+<li>Delete the account entry<ul>
+<li>[FreeBSD] vipw, pw userdel</li>
+<li>[Linux] remove the row in &#x2F;etc&#x2F;passwd and pwconv</li>
 </ul>
 </li>
-<li>With rc:<ul>
-<li><code>service pure-ftpd start</code></li>
+<li>Backup file and mailbox<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar jcf harry-home-20190927.tar.bz /home/harry</span><br><span class="line">tar jcf harry-mail-20190927.tar.bz /var/mail/harry</span><br><span class="line">chmod 600 liyu-*-20190927.tar.bz</span><br></pre></td></tr></table></figure></li>
+<li>Delete home directory and mailbox<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /home/harry /var/mail/harry</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Rootly-Powers"><a href="#Rootly-Powers" class="headerlink" title="Rootly Powers"></a>Rootly Powers</h2><ul>
+<li><p>Root</p>
+<ul>
+<li>Root is God, A.K.A. super-user.</li>
+<li>UID is 0</li>
 </ul>
 </li>
+<li><p>UNIX permits super-user to perform any valid operation on any file or process, such as:</p>
+<ul>
+<li>Changing the root directory of a process with chroot</li>
+<li>Configuring network interfaces (ifconfig command)</li>
+<li>Shutting down the system (shutdown command)</li>
+<li>…</li>
 </ul>
 </li>
-<li>Launch daemon processes<ul>
-<li>Launch<ul>
-<li>Path to the executable binary&#x2F;script</li>
-<li>&#x2F;usr&#x2F;sbin&#x2F;inetd</li>
+<li><p>Login as root</p>
+<ul>
+<li>Remote login (login via ssh)</li>
+<li>sshd:&#x2F;etc&#x2F;ssh&#x2F;sshd_config  -&gt; <strong>insecure</strong><br>  <code>#PermitRootLogin yes</code></li>
 </ul>
 </li>
-<li>Configuration<ul>
-<li>Program-specified configuration</li>
-<li>&#x2F;etc&#x2F;inetd.conf</li>
+<li><p>su : substitute user identity</p>
+<ul>
+<li>su, su -, su username</li>
 </ul>
 </li>
-<li>Pidfile<ul>
-<li>Records (master) process id of the service</li>
-<li>&#x2F;var&#x2F;run&#x2F;inetd.pid</li>
+<li><p>sudo : a limited su (security&#x2F;sudo)</p>
+<ul>
+<li>Subdivide superuser’s power<ul>
+<li>Who can execute what command on which host as whom.</li>
 </ul>
 </li>
+<li>Each command executed though sudo will be logged (&#x2F;var&#x2F;log&#x2F;auth.log) -&gt; trackable</li>
 </ul>
 </li>
-<li>Use rc scipt <ul>
-<li>ex:ntpd<br>  <img src="https://i.imgur.com/9iqnCtb.png"></li>
-<li>as rc.conf<br>  <img src="https://i.imgur.com/vvoJIS4.png"></li>
-<li>An easy way to access: “service”<ul>
-<li>$ service ntpd start&#x2F;stop&#x2F;restart&#x2F;reload&#x2F;…<ul>
-<li>Search &#x2F;etc&#x2F;rc.d and &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Start<ul>
-<li>start the service and write PID files now</li>
-</ul>
-</li>
-<li>Stop<ul>
-<li>killing the process with PID</li>
-</ul>
-</li>
-<li>Restart<ul>
-<li>Restart the service</li>
-</ul>
-</li>
-<li>Enable&#x2F;Disable<ul>
-<li>Edit &#x2F;etc&#x2F;rc.conf with XXX_enable&#x3D;“YES” or “NO”</li>
-</ul>
-</li>
-<li>Reload<ul>
-<li>Reload configuration file</li>
-</ul>
-</li>
-<li>Status<ul>
-<li>Check the service is running or not</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Local installed service<ul>
-<li>More about how to use rc.conf for an installed service, read comments from that script</li>
-<li>&#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;pure-ftpd<br><img src="https://i.imgur.com/LVTVgCs.png"></li>
+<li><p>sudoers</p>
+<ul>
+<li>Who can execute what command on which host as whom</li>
+<li>modify <code>/etc/sudoers</code> to allow new authorities</li>
+<li>can use <code>visudo</code> to edit<br><img src="https://i.imgur.com/i3B0Cxn.png"></li>
 </ul>
 </li>
 </ul>
 
+      </div>
+      
+      
+      
     </div>
 
     
     
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/SA-Note/" rel="tag"><i class="fa fa-tag"></i> SA Note</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2020/04/06/User-Management/" rel="prev" title="User Management">
-                  <i class="fa fa-chevron-left"></i> User Management
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2020/04/07/Indirekte-Rede/" rel="next" title="Konjunktiv I und Indirekte Rede">
-                  Konjunktiv I und Indirekte Rede <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
 
 
 </div>

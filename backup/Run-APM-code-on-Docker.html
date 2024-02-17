@@ -21,23 +21,39 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"h123a456rr789y.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Harry&#39;s Stories">
-<meta property="og:url" content="https://h123a456rr789y.github.io/tags/Intern/index.html">
+    <meta name="description" content="Building the APM code on Docker to gernerate the package.tar.gz">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Run APM code on Docker">
+<meta property="og:url" content="https://h123a456rr789y.github.io/backup/Run-APM-code-on-Docker.html">
 <meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="Building the APM code on Docker to gernerate the package.tar.gz">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/bR11WkW.png">
+<meta property="og:image" content="https://i.imgur.com/DjEz9XH.png">
+<meta property="og:image" content="https://i.imgur.com/xq4HivY.png">
+<meta property="og:image" content="https://i.imgur.com/4GdGLg3.png">
+<meta property="og:image" content="https://i.imgur.com/lrMS34n.png">
+<meta property="og:image" content="https://i.imgur.com/bY7XVr1.png">
+<meta property="og:image" content="https://i.imgur.com/DD7pwT1.png">
+<meta property="og:image" content="https://i.imgur.com/2HwpNV1.png">
+<meta property="article:published_time" content="2019-08-31T08:43:56.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
 <meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="Intern">
+<meta property="article:tag" content="APM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/bR11WkW.png">
 
 
-<link rel="canonical" href="https://h123a456rr789y.github.io/tags/Intern/">
+<link rel="canonical" href="https://h123a456rr789y.github.io/backup/Run-APM-code-on-Docker">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/Intern/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://h123a456rr789y.github.io/backup/Run-APM-code-on-Docker.html","path":"backup/Run-APM-code-on-Docker.html","title":"Run APM code on Docker"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: Intern | Harry's Stories</title>
+<title>Run APM code on Docker | Harry's Stories
+</title>
   
 
 
@@ -99,7 +115,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -112,6 +128,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-the-APM-code-on-docker"><span class="nav-number">1.</span> <span class="nav-text">Run the APM code on docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisite"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-the-16-04-ubuntu-docker-image"><span class="nav-number">1.2.</span> <span class="nav-text">Build the 16.04 ubuntu docker image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-the-image-on-docker-and-build-the-code"><span class="nav-number">1.3.</span> <span class="nav-text">Run the image on docker and build the code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-result-file-package-tar-gz"><span class="nav-number">1.4.</span> <span class="nav-text">The result file package.tar.gz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change-the-file-kvm-ko-and-kvm-intel-ko-in-the-kernel-modules"><span class="nav-number">1.5.</span> <span class="nav-text">Change the file kvm.ko and kvm-intel.ko in the kernel modules</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -126,13 +143,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -165,150 +182,74 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner page posts-expand">
 
 
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Intern
-          <small>Tag</small>
-        </h1>
-      </div>
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Run APM code on Docker
+</h1>
+
+<div class="post-meta-container">
+    <div class="post-description">Building the APM code on Docker to gernerate the package.tar.gz</div>
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
+      
+      <div class="post-body">
+          <h1 id="Run-the-APM-code-on-docker"><a href="#Run-the-APM-code-on-docker" class="headerlink" title="Run the APM code on docker"></a>Run the APM code on docker</h1><h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ul>
+<li>docker installed<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker.io</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Build-the-16-04-ubuntu-docker-image"><a href="#Build-the-16-04-ubuntu-docker-image" class="headerlink" title="Build the 16.04 ubuntu docker image"></a>Build the 16.04 ubuntu docker image</h2><ul>
+<li>Go the directory of <code>docker/addm-build-ubuntu16</code> and run the build.sh file<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd docker/addm-build-ubuntu16</span><br><span class="line">bash build.sh</span><br></pre></td></tr></table></figure></li>
+<li>Problem may encounter: <code>E:Unable to locate package ca-certificates The command &#39;/bin/sh -c apt-get install -y ca-certificates&#39; return a non-zero code:100</code></li>
+<li>Solution: Set the DNS server to ITRI Domain as below</li>
+<li>This problem may also happened in docker container later, be sure to change the nameserver<br><img src="https://i.imgur.com/bR11WkW.png"></li>
+</ul>
+<h2 id="Run-the-image-on-docker-and-build-the-code"><a href="#Run-the-image-on-docker-and-build-the-code" class="headerlink" title="Run the image on docker and build the code"></a>Run the image on docker and build the code</h2><ul>
+<li><p><code>cd ..</code> to the docker directory and change the image source in <code>run-docker.sh</code> (ex:<code>u16.04</code>) and run the <code>run-docker.sh</code>  file with bash </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash run-docker.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/DjEz9XH.png"></p>
+</li>
+<li><p>Problem may encounter: Permission denied of <code>XXX.sh</code> </p>
+</li>
+<li><p>Solution: Use command <code>chmod +x ./sh</code> to make the .sh file executable</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/xq4HivY.png"></p>
+<ul>
+<li>After entering the container, go to the directory addm and run the <code>build.sh</code> file and the result will be as the photo below<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd addm</span><br><span class="line">bash build.sh</span><br></pre></td></tr></table></figure>
+<img src="https://i.imgur.com/4GdGLg3.png"></li>
+</ul>
+<h2 id="The-result-file-package-tar-gz"><a href="#The-result-file-package-tar-gz" class="headerlink" title="The result file package.tar.gz"></a>The result file package.tar.gz</h2><ul>
+<li>After building the code, we will get a <code>package.tar.gz</code> file which will be located on the addm-master directory on the host as the photo shows<br><img src="https://i.imgur.com/lrMS34n.png"></li>
+</ul>
+<h2 id="Change-the-file-kvm-ko-and-kvm-intel-ko-in-the-kernel-modules"><a href="#Change-the-file-kvm-ko-and-kvm-intel-ko-in-the-kernel-modules" class="headerlink" title="Change the file kvm.ko and kvm-intel.ko in the kernel modules"></a>Change the file kvm.ko and kvm-intel.ko in the kernel modules</h2><ul>
+<li>untar the <code>package.tar.gz</code> we will get a <strong>addm</strong> directory</li>
+<li>The <code>kvm.ko and kvm-intel.ko</code>, built by us, are under the directory &#x2F;addm&#x2F;bin </li>
+<li>Move these two files to the kernel module in the <code>/lib/module/4.15.0-50-generic/kernel/arch/x86/kvm</code></li>
+</ul>
+<p><img src="https://i.imgur.com/bY7XVr1.png"></p>
+<p><img src="https://i.imgur.com/DD7pwT1.png"></p>
+<ul>
+<li>Reboot to check whether the system function well</li>
+<li>Run and test at least one VM on the host to check the KVM modules are working.<br><img src="https://i.imgur.com/2HwpNV1.png"></li>
+</ul>
+
+      </div>
+      
+      
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:43:56+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/Run-APM-code-on-Docker/" itemprop="url">
-            <span itemprop="name">Run APM code on Docker</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:41:05+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/Web-Server-API-Server/" itemprop="url">
-            <span itemprop="name">Web Server & API Server</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:24:42+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/Recompile-Kernel-on-Linux/" itemprop="url">
-            <span itemprop="name">Recompile Kernel on Linux</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:22:59+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/APM-Deployment/" itemprop="url">
-            <span itemprop="name">APM-Deployment</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:20:33+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/APM-RabbitMQ/" itemprop="url">
-            <span itemprop="name">APM-RabbitMQ</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-08-31T16:10:32+08:00"
-              content="2019-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/08/31/5G-Privacy/" itemprop="url">
-            <span itemprop="name">5G Privacy Security</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
 
 </div>
   </main>

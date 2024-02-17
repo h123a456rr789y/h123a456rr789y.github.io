@@ -21,23 +21,33 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"h123a456rr789y.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Harry&#39;s Stories">
-<meta property="og:url" content="https://h123a456rr789y.github.io/tags/Computer-Vision/index.html">
+    <meta name="description" content="Introduction to service and configuration setting in FreeBSD">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Service and Setting">
+<meta property="og:url" content="https://h123a456rr789y.github.io/backup/Service-and-Setting.html">
 <meta property="og:site_name" content="Harry&#39;s Stories">
+<meta property="og:description" content="Introduction to service and configuration setting in FreeBSD">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/9iqnCtb.png">
+<meta property="og:image" content="https://i.imgur.com/vvoJIS4.png">
+<meta property="og:image" content="https://i.imgur.com/LVTVgCs.png">
+<meta property="article:published_time" content="2020-04-06T13:26:13.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:03:00.890Z">
 <meta property="article:author" content="Harry Hong">
+<meta property="article:tag" content="SA Note">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/9iqnCtb.png">
 
 
-<link rel="canonical" href="https://h123a456rr789y.github.io/tags/Computer-Vision/">
+<link rel="canonical" href="https://h123a456rr789y.github.io/backup/Service-and-Setting">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/Computer-Vision/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://h123a456rr789y.github.io/backup/Service-and-Setting.html","path":"backup/Service-and-Setting.html","title":"Service and Setting"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: Computer Vision | Harry's Stories</title>
+<title>Service and Setting | Harry's Stories
+</title>
   
 
 
@@ -99,7 +109,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -112,6 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Services-amp-Settings"><span class="nav-number">1.</span> <span class="nav-text">Services &amp; Settings</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Services"><span class="nav-number">1.1.</span> <span class="nav-text">Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RC-Script"><span class="nav-number">1.2.</span> <span class="nav-text">RC Script</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -126,13 +137,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -165,50 +176,166 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner page posts-expand">
 
 
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Computer Vision
-          <small>Tag</small>
-        </h1>
-      </div>
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+<h1 class="post-title" itemprop="name headline">Service and Setting
+</h1>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-31T20:33:19+08:00"
-              content="2021-05-31">
-          05-31
-        </time>
-      </div>
+<div class="post-meta-container">
+    <div class="post-description">Introduction to service and configuration setting in FreeBSD</div>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/31/Openpose-Intallation-on-Ubuntu-18-04/" itemprop="url">
-            <span itemprop="name">Openpose Intallation on Ubuntu 18.04</span>
-          </a>
-      </div>
+</header>
 
       
-    </header>
-  </article>
+      
+      <div class="post-body">
+          <h1 id="Services-amp-Settings"><a href="#Services-amp-Settings" class="headerlink" title="Services &amp; Settings"></a>Services &amp; Settings</h1><h2 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h2><ul>
+<li>Commen Flow of Runing a Service <ol>
+<li>Installation:<ul>
+<li>Through ports, packages, or source tarballs<ul>
+<li><code>pkg install kde4</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configuration<ul>
+<li>Update &#x2F;etc&#x2F;rc.conf<ul>
+<li><code>kdm4_enable=&quot;YES”</code></li>
+</ul>
+</li>
+<li>service kdm4 enable</li>
+</ul>
+</li>
+<li>Start<ul>
+<li>rc.d&#x2F;*<ul>
+<li>&#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;kdm4 start</li>
+</ul>
+</li>
+<li>service kdm4 start</li>
+</ul>
+</li>
+<li>Maintenance<ul>
+<li>Updating and Restarting</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Configuration File<ul>
+<li>Local installed programs’ configuration files are located under &#x2F;usr&#x2F;local&#x2F;etc<ul>
+<li>Daemon → program-name.conf<ul>
+<li>pure-ftpd.conf</li>
+</ul>
+</li>
+<li>user-program → program-name<strong>rc</strong><ul>
+<li>vimrc</li>
+<li>screenrc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Default config file usually installed with .sample or .default suffix<ul>
+<li>copy and rename before use it</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A program with multiple config files are usually located in &#x2F;usr&#x2F;local&#x2F;etc&#x2F;program-name&#x2F; in a directory <ul>
+<li>apache*</li>
+</ul>
+</li>
+</ul>
+<h2 id="RC-Script"><a href="#RC-Script" class="headerlink" title="RC Script"></a>RC Script</h2><ul>
+<li>Scripts for starting &#x2F; stopping a service</li>
+<li>Command scripts for auto-reboot and daemon startup</li>
+<li>Start services on system startup</li>
+<li>Starting and Stopping services in a standard way<ul>
+<li>Without rc:<ul>
+<li><code>usr/local/sbin/pure-ftpd -g /var/run/pure-ftpd.pid -A -c50 -B -C8 -D -fftp -H -I15 -lpam -lunix -L10000:8 -m4 -s -U133:022 -u100 -k99 -Z</code></li>
+</ul>
+</li>
+<li>With rc:<ul>
+<li><code>service pure-ftpd start</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Launch daemon processes<ul>
+<li>Launch<ul>
+<li>Path to the executable binary&#x2F;script</li>
+<li>&#x2F;usr&#x2F;sbin&#x2F;inetd</li>
+</ul>
+</li>
+<li>Configuration<ul>
+<li>Program-specified configuration</li>
+<li>&#x2F;etc&#x2F;inetd.conf</li>
+</ul>
+</li>
+<li>Pidfile<ul>
+<li>Records (master) process id of the service</li>
+<li>&#x2F;var&#x2F;run&#x2F;inetd.pid</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use rc scipt <ul>
+<li>ex:ntpd<br>  <img src="https://i.imgur.com/9iqnCtb.png"></li>
+<li>as rc.conf<br>  <img src="https://i.imgur.com/vvoJIS4.png"></li>
+<li>An easy way to access: “service”<ul>
+<li>$ service ntpd start&#x2F;stop&#x2F;restart&#x2F;reload&#x2F;…<ul>
+<li>Search &#x2F;etc&#x2F;rc.d and &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Start<ul>
+<li>start the service and write PID files now</li>
+</ul>
+</li>
+<li>Stop<ul>
+<li>killing the process with PID</li>
+</ul>
+</li>
+<li>Restart<ul>
+<li>Restart the service</li>
+</ul>
+</li>
+<li>Enable&#x2F;Disable<ul>
+<li>Edit &#x2F;etc&#x2F;rc.conf with XXX_enable&#x3D;“YES” or “NO”</li>
+</ul>
+</li>
+<li>Reload<ul>
+<li>Reload configuration file</li>
+</ul>
+</li>
+<li>Status<ul>
+<li>Check the service is running or not</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Local installed service<ul>
+<li>More about how to use rc.conf for an installed service, read comments from that script</li>
+<li>&#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;pure-ftpd<br><img src="https://i.imgur.com/LVTVgCs.png"></li>
+</ul>
+</li>
+</ul>
 
+      </div>
+      
+      
+      
     </div>
-  </div>
-  
-  
-  
+
+    
+    
+
 
 </div>
   </main>
