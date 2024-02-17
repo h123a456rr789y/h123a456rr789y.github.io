@@ -137,25 +137,6 @@
   </entry>
   
   <entry>
-    <title>Periodic Processes</title>
-    <link href="https://h123a456rr789y.github.io/2020/04/07/Periodic-Processes/"/>
-    <id>https://h123a456rr789y.github.io/2020/04/07/Periodic-Processes/</id>
-    <published>2020-04-07T10:47:50.000Z</published>
-    <updated>2022-08-11T10:03:00.890Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Periodic-Processes"><a href="#Periodic-Processes" class="headerlink" title="Periodic Processes"></a>Periodic Processes</h1><h2 id="Goal-Do-things-at-right-time-automatically"><a href="#Goal-Do-things-at-right-time-automatically" class="headerlink" title="Goal: Do things at right time automatically"></a>Goal: Do things at right time automatically</h2><h2 id="Cron-daemon"><a href="#Cron-daemon" class="headerlink" title="Cron daemon:"></a>Cron daemon:</h2><ul><li>The daemon that handles periodic execution</li><li>Cron daemon reads configuration file and executes commands on<br>time</li><li>Details: Look up man cron(8), crontab(1), crontab(5)</li></ul><h2 id="Configuration-file"><a href="#Configuration-file" class="headerlink" title="Configuration file"></a>Configuration file</h2><ul><li><p>crontab</p></li><li><p>Location of <strong>user</strong> cron configuration file<br>  ![](<a href="https://i.imgur.com/8EdQzPs.png">https://i.imgur.com/8EdQzPs.png</a> &#x3D;400x200)</p></li><li><p>Location of <strong>System</strong> Cron Configuration file</p><ul><li><code>/etc/crontab</code></li></ul></li></ul><h2 id="Configuration-File-Format"><a href="#Configuration-File-Format" class="headerlink" title="Configuration File Format"></a>Configuration File Format</h2><h2 id="Rules-matches-everything-Single-character-matches-exactly-Dash-matches-range-Comma-matches-any-listed-value-Slash-x2F-matches-skips-of-the-number’s-value-through-the-range-Examples"><a href="#Rules-matches-everything-Single-character-matches-exactly-Dash-matches-range-Comma-matches-any-listed-value-Slash-x2F-matches-skips-of-the-number’s-value-through-the-range-Examples" class="headerlink" title="- Rules:    - * matches everything    - Single character matches exactly    - Dash(-) matches range    - Comma(,) matches any listed value    - Slash(&#x2F;) matches skips of the number’s value through the range- Examples:"></a><img src="https://i.imgur.com/ScqbSAf.png"><br>- Rules:<br>    - <code>* </code>matches everything<br>    - Single character matches exactly<br>    - Dash(-) matches range<br>    - Comma(,) matches any listed value<br>    - Slash(&#x2F;) matches skips of the number’s value through the range<br>- Examples:</h2><pre><code>![](https://i.imgur.com/KKUjZxR.png)</code></pre><ul><li><p>Special Sting or Time</p><p>  ![](<a href="https://i.imgur.com/V7HziEX.png">https://i.imgur.com/V7HziEX.png</a> &#x3D;400x300)</p></li></ul><h2 id="crontab-Command"><a href="#crontab-Command" class="headerlink" title="crontab Command"></a>crontab Command</h2><ul><li><code>crontab -e [-u user]</code><ul><li>Edit the [user’s] crontab using editor</li></ul></li><li><code>crontab -l</code><ul><li>List the content of the crontab</li></ul></li><li><code>crontab -r</code><ul><li>Remove the current crontab</li></ul></li></ul><h2 id="crontab-Management"><a href="#crontab-Management" class="headerlink" title="crontab Management"></a>crontab Management</h2><ul><li>To Allow or deny user from using cron daemon<ul><li>By default, all users can have their own crontab</li></ul></li><li>log<br>  ![](<a href="https://i.imgur.com/QKTI9xK.png">https://i.imgur.com/QKTI9xK.png</a> &#x3D;500x200)</li></ul><h2 id="System-crontab-x2F-etc-x2F-crontab"><a href="#System-crontab-x2F-etc-x2F-crontab" class="headerlink" title="System crontab: &#x2F;etc&#x2F;crontab"></a>System crontab: &#x2F;etc&#x2F;crontab</h2><p><img src="https://i.imgur.com/kl3sYRu.png"></p><h2 id="Periodic-Utility"><a href="#Periodic-Utility" class="headerlink" title="Periodic Utility"></a>Periodic Utility</h2><ul><li>Run periodic system function under <code>/etc/periodic</code></li><li><code>/etc/periodic.conf</code></li><li>For custom system programs: <code>/usr/local/etc/periodic</code></li><li>Execution order depends on filenames<ul><li>Use number as prefix to control the order</li></ul></li><li><code>/etc/periodic.conf</code></li></ul>]]></content>
-    
-    
-    <summary type="html">Introduction to Periodic Processes and crontab</summary>
-    
-    
-    
-    
-    <category term="SA Note" scheme="https://h123a456rr789y.github.io/tags/SA-Note/"/>
-    
-  </entry>
-  
-  <entry>
     <title>FTP</title>
     <link href="https://h123a456rr789y.github.io/2020/04/07/FTP/"/>
     <id>https://h123a456rr789y.github.io/2020/04/07/FTP/</id>
@@ -400,6 +381,27 @@
     
     
     <summary type="html">一段前往漢堡的火車之旅，一杯shot，開始了一段新的冒險</summary>
+    
+    
+    
+    
+    <category term="Story" scheme="https://h123a456rr789y.github.io/tags/Story/"/>
+    
+    <category term="Germany" scheme="https://h123a456rr789y.github.io/tags/Germany/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Weihnachtsabenteuer 聖誕冒險記</title>
+    <link href="https://h123a456rr789y.github.io/2019/08/21/Weihnachtsabenteuer/"/>
+    <id>https://h123a456rr789y.github.io/2019/08/21/Weihnachtsabenteuer/</id>
+    <published>2019-08-21T13:08:07.000Z</published>
+    <updated>2022-08-11T10:03:00.890Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Weihnachtsabenteuer"><a href="#Weihnachtsabenteuer" class="headerlink" title="Weihnachtsabenteuer"></a>Weihnachtsabenteuer</h1><p>2013年我參加了交換計畫到德國交換一年，2013年的聖誕節，是人生中最特別的聖誕節，那年是我第一次，真正感受到聖誕佳節家族團聚的溫馨氣氛，此外，它更是一段充滿冒險與驚奇的日子。</p><p><img src="https://i.imgur.com/LrGveuv.jpg"></p><p>在每年的聖誕節假期前的三到四個週末，德國的大城市都會舉辦一年一度的聖誕市集，我的寄宿家庭為了帶我體驗聖誕市集，特別在那個幾個週末把時間空下來，帶我去附近大城市的聖誕市集遊玩，市集的燈光為寒冷的冬夜點起了幾分熱鬧與喧囂，我們漫步在市集中，一邊逛著聖誕飾品攤位，一邊享受著這美好與家人共處的時光，走累了、餓了，就找幾個美食攤位並在旁邊的站桌就吃起東西休息起來，就當我們吃的正爽的時候,旁邊突然有位女士快步的走到我們桌前,丟下了一個東西,並快步的離開了。我一時沒反應過來，以為是那個女士剛吃完東西要把垃圾丟在桌上讓攤位的人來收拾，仔細一看,原來是一本書，我轟爸看著我說：「這本書是他送給你的禮物,要好好留著！」並叫我帶著,好好收起來,我沒想太多就只是當做再做善事就把他收起來,當作聖誕市集的紀念品吧。事後當我翻開書本的第一頁時,書上寫著：「這是一本自由的書,帶著他一起去旅行吧,希望他可以陪你度過一段美好的時光，當你讀完時，記得將這本書傳給下一個人,讓下一個人能夠帶著你的經驗,一直傳遞下去」，這個想法真的是非常有意思，於是我決定繼承他的意志，繼續著我的德意志之旅。</p><p><img src="https://i.imgur.com/RE2NZLI.jpg"></p><p>我繼續聖誕市集中漫遊，期待著下一個驚奇與令我為之駐足的的事物。在人海中，我們發現了一個魔術師, 我們不約而同的圍觀了過去，此時魔術師需要一位小幫手, 我的轟爸下意識的把我推了出去，並舉起了我的手，此時的我心中只有萬分的惶恐，向上帝祈禱魔術師千萬不要選到我，可是上帝沒有順著我的意思，反而給我了最好的安排，我在眾多舉手的人中被選中了，就好像命中注定一樣。</p><p>於是我不知哪來的勇氣，我站上了台，當魔術師看到我亞洲人的面孔時，他試著用英文跟我套套近乎，問我從哪個國家來，在德國做什麼，我自信地用德文回他說:「我是台灣人，我來德國當交換學生」，小聊了一下後，這場世紀尷尬的魔術表演就開始了。</p><p>首先，他叫我從撲克牌中抽一張牌並記住它，接著他將牌遞給我並叫我把牌洗一洗，然後跟我說:「當他數到三時我就把牌丟到空中」，同時他從腰際掏出一把寶劍，並說道：「我會用這把劍來找出你的牌」，接著說：「我們先練習丟一次（這句話我沒聽清楚）」，於是他數一、二、三，我就將全部牌灑了出去，此時全場哄堂大笑，魔術師尷尬的將地上的牌全部撿了起來，並再三跟我確認我有了解遊戲規則，這次來真的, 他數一、二、三，我將全部的牌往他身上奮力一丟，他拿著寶劍試圖要從牌堆中刺到我選的那張牌，但事與願違，他的寶劍上空空如也，全場都被這個操作給驚呆了，魔術師尷尬的再一次撿起地上的牌，跟我說：「等下記得往天空上丟」，叫我再丟一次，一、二、三，他刺中了!魔術師終於收起了尷尬又不失禮貌的微笑，並將劍上的牌遞給了我叫我大聲喊出來它是什麼。</p><p>全場屏氣凝神，就為了見證這個奇蹟的時刻，然而殊不知當下才是全場最尷尬的時間，我看著牌，牌看著我，時間彷彿凍結住了，我抽到的確實是黑桃4沒錯，萬萬沒想到的是，我竟然不知道黑桃的德文，此時場面越加尷尬我只好大喊出黑桃4的英文（4 of Spade）並匆忙的跑下台，心中一萬隻草泥馬飛奔而過，真的是丟臉丟到家了。</p><p>回憶起來，嘴角總會微微上揚，有人說：「人生若不是一場冒險，那就什麼也不是」，或許就是一個無心的決定，所帶來的驚奇與不確定，人生的故事才如此耐人尋味。</p><p><img src="https://i.imgur.com/SngItjX.jpg"></p>]]></content>
+    
+    
+    <summary type="html">還記得那是一年特別的聖誕節 那些神奇的故事還記憶猶新</summary>
     
     
     

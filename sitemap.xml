@@ -137,15 +137,6 @@
   </url>
   
   <url>
-    <loc>https://h123a456rr789y.github.io/2020/04/07/Periodic-Processes/</loc>
-    
-    <lastmod>2022-08-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://h123a456rr789y.github.io/2020/03/29/Shell-Programming/</loc>
     
     <lastmod>2022-08-11</lastmod>
@@ -354,6 +345,15 @@
   
   <url>
     <loc>https://h123a456rr789y.github.io/backup/User-Management.html</loc>
+    
+    <lastmod>2022-08-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://h123a456rr789y.github.io/backup/Periodic-Processes.html</loc>
     
     <lastmod>2022-08-11</lastmod>
     
